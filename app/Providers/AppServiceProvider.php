@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
 
         Blade::directive('precio', fn (string $expresion) => "<?php echo e(\\App\\Support\\Precio::formato({$expresion})); ?>");
 
-        View::composer('components.tienda-layout', function ($view) {
+        View::composer('partials.header', function ($view) {
             $view->with('cantidadCarrito', app(Carrito::class)->cantidadTotal());
         });
     }

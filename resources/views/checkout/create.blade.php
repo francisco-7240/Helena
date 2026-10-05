@@ -4,7 +4,7 @@
 
         @guest
             <p class="mt-3 text-sm text-stone-600">
-                ¿Ya tienes cuenta? <a href="{{ route('login') }}" class="text-rose-700 hover:underline">Inicia sesión</a> para ver tus pedidos más tarde.
+                ¿Ya tienes cuenta? <a href="{{ route('login') }}" class="text-helena-verde hover:underline">Inicia sesión</a> para ver tus pedidos más tarde.
             </p>
         @endguest
 
@@ -84,7 +84,7 @@
                 <div class="mt-4 border-t border-stone-200 pt-4">
                     <x-tienda.resumen :subtotal="$subtotal" :envio="$envio" :total="$total" />
                 </div>
-                <button class="mt-6 w-full rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-white hover:bg-rose-700">Confirmar pedido</button>
+                <button class="mt-6 w-full rounded-full bg-helena-oscuro px-6 py-3 text-sm font-semibold text-white hover:bg-helena-verde">Confirmar pedido</button>
             </aside>
         </form>
     </div>

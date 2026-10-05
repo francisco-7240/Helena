@@ -41,12 +41,12 @@ class TiendaTest extends TestCase
 
     public function test_el_detalle_de_producto_se_muestra(): void
     {
-        $producto = Producto::factory()->conStock()->create(['precio' => 50, 'precio_oferta' => 40]);
+        $producto = Producto::factory()->conStock()->create(['precio' => 50000, 'precio_oferta' => 40000]);
 
         $this->get(route('tienda.producto', $producto))
             ->assertOk()
             ->assertSee($producto->nombre)
-            ->assertSee('40,00')
+            ->assertSee('40.000')
             ->assertSee('Agregar al carrito');
     }
 

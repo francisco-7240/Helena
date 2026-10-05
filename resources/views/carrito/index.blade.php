@@ -5,7 +5,7 @@
         @if ($lineas->isEmpty())
             <div class="mt-10 rounded-lg border border-dashed border-stone-300 p-12 text-center">
                 <p class="text-stone-500">Tu carrito está vacío.</p>
-                <a href="{{ route('tienda.catalogo') }}" class="mt-6 inline-flex rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-white hover:bg-rose-700">Ir a la tienda</a>
+                <a href="{{ route('tienda.catalogo') }}" class="mt-6 inline-flex rounded-full bg-helena-oscuro px-6 py-3 text-sm font-semibold text-white hover:bg-helena-verde">Ir a la tienda</a>
             </div>
         @else
             <div class="mt-8 grid gap-10 lg:grid-cols-[1fr_360px]">
@@ -17,7 +17,7 @@
                             </a>
                             <div class="flex flex-1 flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                                 <div>
-                                    <a href="{{ route('tienda.producto', $linea->producto) }}" class="font-medium hover:text-rose-700">{{ $linea->producto->nombre }}</a>
+                                    <a href="{{ route('tienda.producto', $linea->producto) }}" class="font-medium hover:text-helena-verde">{{ $linea->producto->nombre }}</a>
                                     @if ($linea->variante->color)
                                         <p class="text-sm text-stone-500">Color: {{ $linea->variante->color->nombre }}</p>
                                     @endif
@@ -34,7 +34,7 @@
                                     <form method="POST" action="{{ route('carrito.eliminar', $linea->variante->id) }}">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="text-stone-400 hover:text-rose-700" aria-label="Eliminar">
+                                        <button class="text-stone-400 hover:text-helena-verde" aria-label="Eliminar">
                                             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
                                         </button>
                                     </form>
@@ -52,11 +52,11 @@
                     @if ($envio > 0)
                         <p class="mt-3 text-xs text-stone-500">Agrega @precio(config('tienda.envio_gratis_desde') - $subtotal) más y obtén envío gratis.</p>
                     @endif
-                    <a href="{{ route('checkout.create') }}" class="mt-6 block rounded-full bg-stone-900 px-6 py-3 text-center text-sm font-semibold text-white hover:bg-rose-700">Finalizar compra</a>
+                    <a href="{{ route('checkout.create') }}" class="mt-6 block rounded-full bg-helena-oscuro px-6 py-3 text-center text-sm font-semibold text-white hover:bg-helena-verde">Finalizar compra</a>
                     <form method="POST" action="{{ route('carrito.vaciar') }}" class="mt-3 text-center">
                         @csrf
                         @method('DELETE')
-                        <button class="text-sm text-stone-500 hover:text-rose-700">Vaciar carrito</button>
+                        <button class="text-sm text-stone-500 hover:text-helena-verde">Vaciar carrito</button>
                     </form>
                 </aside>
             </div>

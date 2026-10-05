@@ -12,8 +12,18 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-                serif: ['"Playfair Display"', ...defaultTheme.fontFamily.serif],
+                sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
+                serif: ['"Cormorant Garamond"', ...defaultTheme.fontFamily.serif],
+            },
+            colors: {
+                helena: {
+                    verde: '#6B7451',
+                    'verde-oscuro': '#565E40',
+                    crema: '#F6ECE4',
+                    arena: '#EFE5DB',
+                    rosa: '#D9A69C',
+                    oscuro: '#2E2C2B',
+                },
             },
         },
     },

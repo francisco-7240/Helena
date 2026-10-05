@@ -19,7 +19,7 @@
         </div>
 
         <div class="mt-8 text-center">
-            <a href="{{ route('tienda.catalogo') }}" class="inline-flex rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-white hover:bg-rose-700">Seguir comprando</a>
+            <a href="{{ route('tienda.catalogo') }}" class="inline-flex rounded-full bg-helena-oscuro px-6 py-3 text-sm font-semibold text-white hover:bg-helena-verde">Seguir comprando</a>
         </div>
     </div>
 </x-tienda-layout>

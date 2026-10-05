@@ -7,8 +7,8 @@
 <x-tienda-layout :titulo="$producto->nombre">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <nav class="text-sm text-stone-500">
-            <a href="{{ route('inicio') }}" class="hover:text-rose-700">Inicio</a> /
-            <a href="{{ route('tienda.categoria', $producto->categoria) }}" class="hover:text-rose-700">{{ $producto->categoria->nombre }}</a> /
+            <a href="{{ route('inicio') }}" class="hover:text-helena-verde">Inicio</a> /
+            <a href="{{ route('tienda.categoria', $producto->categoria) }}" class="hover:text-helena-verde">{{ $producto->categoria->nombre }}</a> /
             <span class="text-stone-800">{{ $producto->nombre }}</span>
         </nav>
 
@@ -40,7 +40,7 @@
 
                 <p class="mt-4 text-2xl">
                     @if ($producto->enOferta())
-                        <span class="font-semibold text-rose-700">@precio($producto->precio_oferta)</span>
+                        <span class="font-semibold text-helena-verde">@precio($producto->precio_oferta)</span>
                         <span class="ml-2 text-lg text-stone-400 line-through">@precio($producto->precio)</span>
                     @else
                         <span class="font-semibold">@precio($producto->precio)</span>
@@ -80,7 +80,7 @@
                                 <label for="cantidad" class="text-sm font-semibold">Cantidad</label>
                                 <input id="cantidad" type="number" name="cantidad" value="1" min="1" :max="stock[variante]" class="mt-2 w-24 rounded-md border-stone-300">
                             </div>
-                            <button class="flex-1 rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-white hover:bg-rose-700 transition">Agregar al carrito</button>
+                            <button class="flex-1 rounded-full bg-helena-oscuro px-6 py-3 text-sm font-semibold text-white hover:bg-helena-verde transition">Agregar al carrito</button>
                         </div>
                         <p class="text-sm text-stone-500" x-text="stock[variante] <= 3 ? '¡Últimas ' + stock[variante] + ' unidades!' : 'En stock'"></p>
                     </form>

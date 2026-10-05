@@ -5,7 +5,7 @@
         @if ($pedidos->isEmpty())
             <div class="mt-10 rounded-lg border border-dashed border-stone-300 p-12 text-center">
                 <p class="text-stone-500">Aún no has realizado pedidos.</p>
-                <a href="{{ route('tienda.catalogo') }}" class="mt-6 inline-flex rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-white hover:bg-rose-700">Ir a la tienda</a>
+                <a href="{{ route('tienda.catalogo') }}" class="mt-6 inline-flex rounded-full bg-helena-oscuro px-6 py-3 text-sm font-semibold text-white hover:bg-helena-verde">Ir a la tienda</a>
             </div>
         @else
             <div class="mt-8 overflow-x-auto rounded-xl bg-white shadow-sm">
@@ -22,7 +22,7 @@
                     <tbody class="divide-y divide-stone-100">
                         @foreach ($pedidos as $pedido)
                             <tr class="hover:bg-stone-50">
-                                <td class="px-4 py-3"><a href="{{ route('pedidos.show', $pedido) }}" class="font-medium text-rose-700 hover:underline">{{ $pedido->codigo }}</a></td>
+                                <td class="px-4 py-3"><a href="{{ route('pedidos.show', $pedido) }}" class="font-medium text-helena-verde hover:underline">{{ $pedido->codigo }}</a></td>
                                 <td class="px-4 py-3">{{ $pedido->created_at->format('d/m/Y') }}</td>
                                 <td class="px-4 py-3">{{ $pedido->items_count }}</td>
                                 <td class="px-4 py-3">@precio($pedido->total)</td>

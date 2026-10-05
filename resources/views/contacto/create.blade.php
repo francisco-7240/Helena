@@ -39,7 +39,7 @@
                 <textarea id="mensaje" name="mensaje" rows="5" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">{{ old('mensaje') }}</textarea>
                 <x-input-error :messages="$errors->get('mensaje')" class="mt-1" />
             </div>
-            <button class="w-full rounded-full bg-stone-900 px-6 py-3 text-sm font-semibold text-white hover:bg-rose-700">Enviar mensaje</button>
+            <button class="w-full rounded-full bg-helena-oscuro px-6 py-3 text-sm font-semibold text-white hover:bg-helena-verde">Enviar mensaje</button>
         </form>
     </div>
 </x-tienda-layout>

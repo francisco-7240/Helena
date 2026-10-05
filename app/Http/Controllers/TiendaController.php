@@ -13,22 +13,14 @@ class TiendaController extends Controller
 {
     public function inicio(): View
     {
-        $destacados = Producto::activos()
-            ->where('destacado', true)
-            ->with(['imagenes', 'categoria'])
+        $productos = Producto::activos()
+            ->with(['imagenes', 'productoColores'])
+            ->orderByDesc('destacado')
             ->latest()
-            ->take(8)
+            ->take(4)
             ->get();
 
-        $novedades = Producto::activos()
-            ->with(['imagenes', 'categoria'])
-            ->latest()
-            ->take(8)
-            ->get();
-
-        $categorias = Categoria::activas()->whereNull('categoria_padre_id')->orderBy('nombre')->get();
-
-        return view('tienda.inicio', compact('destacados', 'novedades', 'categorias'));
+        return view('tienda.inicio', compact('productos'));
     }
 
     public function catalogo(Request $request, ?Categoria $categoria = null): View

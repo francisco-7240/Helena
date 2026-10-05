@@ -1,8 +1,8 @@
 <x-tienda-layout :titulo="$categoriaActual?->nombre ?? 'Tienda'">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <nav class="text-sm text-stone-500">
-            <a href="{{ route('inicio') }}" class="hover:text-rose-700">Inicio</a> /
-            <a href="{{ route('tienda.catalogo') }}" class="hover:text-rose-700">Tienda</a>
+            <a href="{{ route('inicio') }}" class="hover:text-helena-verde">Inicio</a> /
+            <a href="{{ route('tienda.catalogo') }}" class="hover:text-helena-verde">Tienda</a>
             @if ($categoriaActual)
                 / <span class="text-stone-800">{{ $categoriaActual->nombre }}</span>
             @endif
@@ -24,9 +24,9 @@
                     <div>
                         <p class="font-semibold">Categorías</p>
                         <ul class="mt-2 space-y-1">
-                            <li><a href="{{ route('tienda.catalogo') }}" @class(['hover:text-rose-700', 'text-rose-700 font-medium' => ! $categoriaActual])>Todas</a></li>
+                            <li><a href="{{ route('tienda.catalogo') }}" @class(['hover:text-helena-verde', 'text-helena-verde font-medium' => ! $categoriaActual])>Todas</a></li>
                             @foreach ($categorias as $categoria)
-                                <li><a href="{{ route('tienda.categoria', $categoria) }}" @class(['hover:text-rose-700', 'text-rose-700 font-medium' => $categoriaActual?->is($categoria)])>{{ $categoria->nombre }}</a></li>
+                                <li><a href="{{ route('tienda.categoria', $categoria) }}" @class(['hover:text-helena-verde', 'text-helena-verde font-medium' => $categoriaActual?->is($categoria)])>{{ $categoria->nombre }}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -50,7 +50,7 @@
                                 @foreach ($colores as $color)
                                     <label title="{{ $color->nombre }}" class="cursor-pointer">
                                         <input type="radio" name="color" value="{{ $color->slug }}" class="sr-only peer" @checked(($filtros['color'] ?? '') === $color->slug)>
-                                        <span class="block h-7 w-7 rounded-full border border-stone-300 peer-checked:ring-2 peer-checked:ring-rose-500 peer-checked:ring-offset-2" style="background-color: {{ $color->codigo_hex }}"></span>
+                                        <span class="block h-7 w-7 rounded-full border border-stone-300 peer-checked:ring-2 peer-checked:ring-helena-verde peer-checked:ring-offset-2" style="background-color: {{ $color->codigo_hex }}"></span>
                                     </label>
                                 @endforeach
                             </div>
@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="flex gap-2">
-                        <button class="flex-1 rounded-md bg-stone-900 px-4 py-2 font-semibold text-white hover:bg-rose-700">Filtrar</button>
+                        <button class="flex-1 rounded-md bg-helena-oscuro px-4 py-2 font-semibold text-white hover:bg-helena-verde">Filtrar</button>
                         <a href="{{ $categoriaActual ? route('tienda.categoria', $categoriaActual) : route('tienda.catalogo') }}" class="rounded-md border border-stone-300 px-4 py-2">Limpiar</a>
                     </div>
                 </form>

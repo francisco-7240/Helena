@@ -16,77 +16,47 @@ class CatalogoSeeder extends Seeder
 {
     public function run(): void
     {
-        $colores = collect([
-            ['Negro', '#111827'],
-            ['Blanco', '#F9FAFB'],
-            ['Rosa', '#F472B6'],
-            ['Beige', '#D6C7A1'],
-            ['Azul', '#2563EB'],
-            ['Verde', '#16A34A'],
-        ])->map(fn (array $c) => Color::firstOrCreate(
-            ['slug' => Str::slug($c[0])],
-            ['nombre' => $c[0], 'codigo_hex' => $c[1]],
-        ));
+        foreach ([['Natural', '#C9B79C'], ['Aguacate', '#7A8B3A'], ['Rosa', '#D9A69C']] as [$nombre, $hex]) {
+            Color::firstOrCreate(['slug' => Str::slug($nombre)], ['nombre' => $nombre, 'codigo_hex' => $hex]);
+        }
 
-        $marcas = collect(['Helena', 'Aurora', 'Luna Bella'])->map(fn (string $nombre) => Marca::firstOrCreate(
-            ['slug' => Str::slug($nombre)],
-            ['nombre' => $nombre],
-        ));
+        $marca = Marca::firstOrCreate(['slug' => 'helena'], ['nombre' => 'Helena', 'descripcion' => 'Cuido de ti.']);
 
         $catalogo = [
-            'Bolsos' => [
-                ['Bolso tote clásico', 89.90, 74.90],
-                ['Bandolera mini', 59.90, null],
-                ['Mochila urbana', 79.00, null],
+            'Cuidado capilar' => [
+                ['Raíz Viva', 'Shampoo natural. Limpieza suave para volver a lo esencial.', 42000, null, true],
+                ['Acondicionador', 'Suavidad, brillo y calma en cada lavado.', 38000, null, true],
+                ['Tratamiento Capilar', 'Nutrición profunda para días de reparación.', 48000, 43000, true],
+                ['Keratina de Aguacate', 'Transforma la textura, conserva tu esencia.', 55000, null, true],
             ],
-            'Accesorios' => [
-                ['Pañuelo de seda', 29.90, null],
-                ['Cinturón de cuero', 39.90, 32.00],
-                ['Gafas de sol retro', 49.00, null],
-            ],
-            'Calzado' => [
-                ['Sandalias trenzadas', 69.90, null],
-                ['Zapatillas blancas', 85.00, 69.00],
-                ['Botines de ante', 119.00, null],
-            ],
-            'Joyería' => [
-                ['Aretes dorados', 24.90, null],
-                ['Collar de perlas', 45.00, null],
-                ['Pulsera de plata', 35.00, 29.90],
+            'Cuidado facial' => [
+                ['Jabón Facial', 'Jabón artesanal de limpieza suave para tu rostro.', 18000, null, false],
             ],
         ];
 
         foreach ($catalogo as $nombreCategoria => $productos) {
             $categoria = Categoria::firstOrCreate(
                 ['slug' => Str::slug($nombreCategoria)],
-                ['nombre' => $nombreCategoria, 'descripcion' => "Descubre nuestra colección de {$nombreCategoria}."],
+                ['nombre' => $nombreCategoria, 'descripcion' => "Rituales de {$nombreCategoria} para volver a ti."],
             );
 
-            foreach ($productos as $i => [$nombre, $precio, $oferta]) {
+            foreach ($productos as [$nombre, $descripcion, $precio, $oferta, $destacado]) {
                 $producto = Producto::firstOrCreate(
                     ['slug' => Str::slug($nombre)],
                     [
                         'categoria_id' => $categoria->id,
-                        'marca_id' => $marcas->random()->id,
+                        'marca_id' => $marca->id,
                         'nombre' => $nombre,
                         'sku' => 'HEL-'.strtoupper(Str::random(6)),
-                        'descripcion' => "{$nombre} de la colección Helena. Diseño elegante, materiales de calidad y acabados cuidados para acompañarte todos los días.",
+                        'descripcion' => $descripcion,
                         'precio' => $precio,
                         'precio_oferta' => $oferta,
-                        'destacado' => $i === 0,
+                        'destacado' => $destacado,
                     ],
                 );
 
-                if ($producto->productoColores()->exists()) {
-                    continue;
-                }
-
-                foreach ($colores->random(3)->values() as $j => $color) {
-                    $producto->productoColores()->create([
-                        'color_id' => $color->id,
-                        'stock' => random_int(0, 15),
-                        'es_predeterminado' => $j === 0,
-                    ]);
+                if (! $producto->productoColores()->exists()) {
+                    $producto->productoColores()->create(['color_id' => null, 'stock' => 20, 'es_predeterminado' => true]);
                 }
             }
         }
