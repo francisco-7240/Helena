@@ -18,7 +18,7 @@
                 <x-tienda.boton-flecha :href="route('inicio').'#cuidado-capilar'" class="mt-8">Conoce el cuidado capilar</x-tienda.boton-flecha>
             </div>
             <div class="flex justify-center md:justify-end">
-                <x-foto src="images/helena/hero-productos.png" alt="Productos de cuidado capilar Helena" class="aspect-[4/3] w-full max-w-xl rounded-sm object-contain" />
+                <x-foto src="storage/recursos/212Recurso 2.png" alt="Productos de cuidado capilar Helena" class="aspect-[4/3] w-full max-w-xl rounded-sm object-contain" />
             </div>
         </div>
     </section>
@@ -37,7 +37,7 @@
                 <x-tienda.boton-flecha :href="route('contacto.create')" class="mt-8">Conoce Helena</x-tienda.boton-flecha>
             </div>
         </div>
-        <x-foto src="images/helena/que-es-helena.jpg" alt="Mujeres con distintos tipos de cabello" class="h-80 w-full md:h-full md:min-h-[30rem]" />
+        <x-foto src="storage/recursos/212Recurso 4.png" alt="Mujeres con distintos tipos de cabello" class="h-80 w-full md:h-full md:min-h-[30rem]" />
     </section>
 
     {{-- Autocuidado --}}
@@ -48,9 +48,9 @@
 
             <div class="mt-10 grid gap-8 sm:grid-cols-3">
                 @foreach ([
-                    ['Cuerpo', 'Lo que habitas. Pequeños rituales para volver a sentirte presente.', 'images/helena/cuerpo.jpg'],
-                    ['Mente', 'Lo que sientes y piensas. Una pausa para hacer espacio.', 'images/helena/mente.jpg'],
-                    ['Espíritu', 'Lo que te conecta. Cuidar también es darte permiso de ser.', 'images/helena/espiritu.jpg'],
+                    ['Cuerpo', 'Lo que habitas. Pequeños rituales para volver a sentirte presente.', 'storage/recursos/cuerpo.png'],
+                    ['Mente', 'Lo que sientes y piensas. Una pausa para hacer espacio.', 'storage/recursos/mente.png'],
+                    ['Espíritu', 'Lo que te conecta. Cuidar también es darte permiso de ser.', 'storage/recursos/espiritu.png'],
                 ] as [$titulo, $texto, $imagen])
                     <article>
                         <x-foto :src="$imagen" :alt="$titulo" class="aspect-[5/6] w-full" />
