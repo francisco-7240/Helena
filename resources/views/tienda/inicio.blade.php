@@ -6,8 +6,8 @@
 
     {{-- Hero --}}
     <section class="relative overflow-hidden bg-helena-arena">
-        @include('partials.hojas', ['clase' => 'pointer-events-none absolute -left-10 -bottom-10 h-[34rem] w-[34rem] text-helena-oscuro/[0.06]'])
-        @include('partials.hojas', ['clase' => 'pointer-events-none absolute left-1/3 -top-24 h-[26rem] w-[26rem] rotate-180 text-helena-oscuro/[0.05]'])
+        @include('partials.hojas', ['clase' => 'pointer-events-none absolute -left-10 -bottom-10 h-[34rem] w-[34rem] opacity-40'])
+        @include('partials.hojas', ['clase' => 'pointer-events-none absolute left-1/3 -top-24 h-[26rem] w-[26rem] rotate-180 opacity-30'])
 
         <div class="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-20 lg:py-24 grid items-center gap-10 md:grid-cols-2">
             <div>
@@ -64,7 +64,7 @@
 
     {{-- Cuidado capilar --}}
     <section id="cuidado-capilar" class="relative overflow-hidden bg-helena-verde text-white scroll-mt-20">
-        @include('partials.hojas', ['clase' => 'pointer-events-none absolute right-0 -bottom-20 h-[36rem] w-[36rem] text-black/[0.08]'])
+        @include('partials.hojas', ['clase' => 'pointer-events-none absolute right-0 -bottom-20 h-[36rem] w-[36rem] opacity-60'])
         <div class="relative max-w-5xl mx-auto px-6 py-24 grid gap-12 md:grid-cols-2 items-center">
             <div>
                 <p class="text-xs text-white/80">El ritual Helena</p>
@@ -130,7 +130,7 @@
 
     {{-- Manifiesto --}}
     <section class="relative overflow-hidden bg-helena-rosa">
-        @include('partials.hojas', ['clase' => 'pointer-events-none absolute -left-16 top-0 h-[34rem] w-[34rem] text-black/[0.07]'])
+        @include('partials.hojas', ['clase' => 'pointer-events-none absolute -left-16 top-0 h-[34rem] w-[34rem] opacity-70'])
         <div class="relative max-w-5xl mx-auto px-6 py-28 grid md:grid-cols-2">
             <div class="md:col-start-2">
                 <p class="text-xs text-helena-oscuro">Manifiesto de marca</p>
