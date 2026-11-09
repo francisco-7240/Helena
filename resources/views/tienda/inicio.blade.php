@@ -34,7 +34,7 @@
                 <p class="mt-6 text-xs leading-relaxed text-helena-oscuro/80">
                     Un espacio para recordar que cuidarte también es una forma de escucharte. Creamos rituales honestos, efectivos y sensibles.
                 </p>
-                <x-tienda.boton-flecha :href="route('contacto.create')" class="mt-8">Conoce Helena</x-tienda.boton-flecha>
+                <x-tienda.boton-flecha :href="route('nosotros')" class="mt-8">Conoce Helena</x-tienda.boton-flecha>
             </div>
         </div>
         <x-foto src="storage/recursos/212Recurso 4.png" alt="Mujeres con distintos tipos de cabello" class="h-80 w-full md:h-full md:min-h-[30rem]" />
@@ -138,7 +138,7 @@
                 <p class="mt-6 max-w-sm text-[11px] leading-relaxed text-white">
                     Creemos que el autocuidado comienza cuando elegimos cuidarnos de manera consciente, sin exigencias y con mucha ternura.
                 </p>
-                <x-tienda.boton-flecha :href="route('contacto.create')" claro class="mt-8">Conoce Helena</x-tienda.boton-flecha>
+                <x-tienda.boton-flecha :href="route('nosotros')" claro class="mt-8">Conoce Helena</x-tienda.boton-flecha>
             </div>
         </div>
     </section>

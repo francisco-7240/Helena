@@ -57,6 +57,14 @@ class TiendaTest extends TestCase
         $this->get(route('tienda.producto', $producto))->assertNotFound();
     }
 
+    public function test_la_pagina_nosotros_se_muestra(): void
+    {
+        $this->get(route('nosotros'))
+            ->assertOk()
+            ->assertSee('Nacimos para')
+            ->assertSee('Cuidarte es una forma de');
+    }
+
     public function test_un_visitante_puede_enviar_un_mensaje_de_contacto(): void
     {
         $this->post(route('contacto.store'), [

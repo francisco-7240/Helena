@@ -17,7 +17,7 @@
                 <p class="text-xs font-medium uppercase tracking-wider text-white">Explora</p>
                 <ul class="mt-4 space-y-1.5 text-xs">
                     <li><a href="{{ route('inicio') }}" class="hover:text-white">Inicio</a></li>
-                    <li><a href="{{ route('inicio') }}#nosotros" class="hover:text-white">Nosotros</a></li>
+                    <li><a href="{{ route('nosotros') }}" class="hover:text-white">Nosotros</a></li>
                     <li><a href="{{ route('inicio') }}#autocuidado" class="hover:text-white">Autocuidado</a></li>
                     <li><a href="{{ route('inicio') }}#cuidado-capilar" class="hover:text-white">Cuidado capilar</a></li>
                     <li><a href="{{ route('tienda.catalogo') }}" class="hover:text-white">Tienda</a></li>

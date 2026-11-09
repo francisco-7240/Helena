@@ -2,7 +2,7 @@
 @php
     $enlacesIzquierda = [
         ['Inicio', route('inicio')],
-        ['Nosotros', route('inicio').'#nosotros'],
+        ['Nosotros', route('nosotros')],
         ['Autocuidado', route('inicio').'#autocuidado'],
     ];
     $enlacesDerecha = [
