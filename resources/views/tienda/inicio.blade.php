@@ -15,7 +15,7 @@
                     Me<br>cuido,<br><em class="text-helena-verde">me amo.</em>
                 </h1>
                 <p class="mt-6 text-sm text-helena-oscuro">Cuidado capilar consciente para volver a ti.</p>
-                <x-tienda.boton-flecha :href="route('inicio').'#cuidado-capilar'" class="mt-8">Conoce el cuidado capilar</x-tienda.boton-flecha>
+                <x-tienda.boton-flecha :href="route('cuidado-capilar')" class="mt-8">Conoce el cuidado capilar</x-tienda.boton-flecha>
             </div>
             <div class="flex justify-center md:justify-end">
                 <x-foto src="storage/recursos/212Recurso 2.png" alt="Productos de cuidado capilar Helena" class="aspect-[4/3] w-full max-w-xl rounded-sm object-contain" />

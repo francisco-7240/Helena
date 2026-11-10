@@ -73,6 +73,19 @@ class TiendaTest extends TestCase
             ->assertSee('Bienestar integral');
     }
 
+    public function test_la_pagina_cuidado_capilar_muestra_productos_de_su_categoria(): void
+    {
+        $capilar = Categoria::factory()->create(['slug' => 'cuidado-capilar']);
+        $shampoo = Producto::factory()->for($capilar)->create(['nombre' => 'Raíz Viva']);
+        $jabon = Producto::factory()->create(['nombre' => 'Jabón Facial']);
+
+        $this->get(route('cuidado-capilar'))
+            ->assertOk()
+            ->assertSee('Cuidado capilar')
+            ->assertSee($shampoo->nombre)
+            ->assertDontSee($jabon->nombre);
+    }
+
     public function test_un_visitante_puede_enviar_un_mensaje_de_contacto(): void
     {
         $this->post(route('contacto.store'), [

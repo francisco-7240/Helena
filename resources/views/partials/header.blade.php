@@ -6,7 +6,7 @@
         ['Autocuidado', route('autocuidado')],
     ];
     $enlacesDerecha = [
-        ['Cuidado Capilar', route('inicio').'#cuidado-capilar'],
+        ['Cuidado Capilar', route('cuidado-capilar')],
         ['Tienda', route('tienda.catalogo')],
     ];
 @endphp

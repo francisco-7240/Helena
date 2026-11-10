@@ -23,6 +23,24 @@ class TiendaController extends Controller
         return view('tienda.inicio', compact('productos'));
     }
 
+    /**
+     * Página de cuidado capilar con los productos de esa categoría.
+     */
+    public function cuidadoCapilar(): View
+    {
+        $categoria = Categoria::activas()->where('slug', 'cuidado-capilar')->first();
+
+        $productos = Producto::activos()
+            ->with('imagenes')
+            ->when($categoria, fn ($query) => $query->where('categoria_id', $categoria->id))
+            ->orderByDesc('destacado')
+            ->latest()
+            ->take(4)
+            ->get();
+
+        return view('tienda.cuidado-capilar', compact('categoria', 'productos'));
+    }
+
     public function catalogo(Request $request, ?Categoria $categoria = null): View
     {
         abort_if($categoria && ! $categoria->estado, 404);

@@ -19,7 +19,7 @@
                     <li><a href="{{ route('inicio') }}" class="hover:text-white">Inicio</a></li>
                     <li><a href="{{ route('nosotros') }}" class="hover:text-white">Nosotros</a></li>
                     <li><a href="{{ route('autocuidado') }}" class="hover:text-white">Autocuidado</a></li>
-                    <li><a href="{{ route('inicio') }}#cuidado-capilar" class="hover:text-white">Cuidado capilar</a></li>
+                    <li><a href="{{ route('cuidado-capilar') }}" class="hover:text-white">Cuidado capilar</a></li>
                     <li><a href="{{ route('tienda.catalogo') }}" class="hover:text-white">Tienda</a></li>
                     <li><a href="{{ route('contacto.create') }}" class="hover:text-white">Contacto</a></li>
                 </ul>
