@@ -65,6 +65,14 @@ class TiendaTest extends TestCase
             ->assertSee('Cuidarte es una forma de');
     }
 
+    public function test_la_pagina_autocuidado_se_muestra(): void
+    {
+        $this->get(route('autocuidado'))
+            ->assertOk()
+            ->assertSee('¿Qué es el')
+            ->assertSee('Bienestar integral');
+    }
+
     public function test_un_visitante_puede_enviar_un_mensaje_de_contacto(): void
     {
         $this->post(route('contacto.store'), [

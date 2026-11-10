@@ -22,6 +22,8 @@ export default {
                     crema: '#F6ECE4',
                     arena: '#EFE5DB',
                     rosa: '#D9A69C',
+                    'rosa-claro': '#F3DCD6',
+                    'rosa-oscuro': '#B5656C',
                     oscuro: '#2E2C2B',
                 },
             },

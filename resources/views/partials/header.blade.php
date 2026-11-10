@@ -3,7 +3,7 @@
     $enlacesIzquierda = [
         ['Inicio', route('inicio')],
         ['Nosotros', route('nosotros')],
-        ['Autocuidado', route('inicio').'#autocuidado'],
+        ['Autocuidado', route('autocuidado')],
     ];
     $enlacesDerecha = [
         ['Cuidado Capilar', route('inicio').'#cuidado-capilar'],

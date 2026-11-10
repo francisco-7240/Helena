@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 // Tienda pública
 Route::get('/', [TiendaController::class, 'inicio'])->name('inicio');
 Route::view('/nosotros', 'tienda.nosotros')->name('nosotros');
+Route::view('/autocuidado', 'tienda.autocuidado')->name('autocuidado');
 Route::get('/tienda', [TiendaController::class, 'catalogo'])->name('tienda.catalogo');
 Route::get('/categoria/{categoria}', [TiendaController::class, 'catalogo'])->name('tienda.categoria');
 Route::get('/producto/{producto}', [TiendaController::class, 'producto'])->name('tienda.producto');

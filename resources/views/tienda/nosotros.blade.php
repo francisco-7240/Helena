@@ -73,7 +73,7 @@
                     <em class="text-helena-verde">Volver a nosotras.</em>
                 </p>
                 <p class="mt-6 text-xs font-semibold text-helena-oscuro">Helena Baüt · Me cuido. Me amo.</p>
-                <x-tienda.boton-flecha :href="route('inicio').'#autocuidado'" class="mt-6">Conoce el autocuidado</x-tienda.boton-flecha>
+                <x-tienda.boton-flecha :href="route('autocuidado')" class="mt-6">Conoce el autocuidado</x-tienda.boton-flecha>
             </div>
         </div>
     </section>

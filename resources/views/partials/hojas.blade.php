@@ -1,2 +1,5 @@
 {{-- Silueta decorativa usada como fondo. Por defecto storage/app/public/recursos/SILUETA.png; se puede cambiar con $src. --}}
-<img src="{{ asset($src ?? 'storage/recursos/SILUETA.png') }}" alt="" aria-hidden="true" class="object-contain {{ $clase ?? 'pointer-events-none absolute' }}">
+@php($src ??= 'storage/recursos/SILUETA.png')
+@if (file_exists(public_path($src)))
+    <img src="{{ asset($src) }}" alt="" aria-hidden="true" class="object-contain {{ $clase ?? 'pointer-events-none absolute' }}">
+@endif
