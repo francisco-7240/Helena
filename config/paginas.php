@@ -185,7 +185,7 @@ return [
             'hero' => [
                 'titulo' => 'Banner principal',
                 'campos' => [
-                    'imagen' => $imagen('Imagen del banner (a todo el ancho, sin texto)', 'storage/Autocuidado/01_hero_mujer_autocuidado.png'),
+                    'imagen' => $imagen('Imagen del banner (a todo el ancho, sin texto)', 'storage/Autocuidado/Belleza serena entre luz y hojas.png'),
                     'titulo' => $parrafo('Título', "Me cuido,\nme escucho,"),
                     'destacado' => $texto('Título destacado (en rosa)', 'me amo.'),
                     'texto' => $parrafo('Texto', 'Un espacio para reconectar contigo, equilibrar tu bienestar y hacer del autocuidado un ritual de vida.'),
@@ -197,15 +197,15 @@ return [
                 'campos' => [
                     'titulo' => $parrafo('Título', "¿Qué es el\nautocuidado?"),
                     'texto' => $parrafo('Texto', 'Es la práctica consciente de atender tus necesidades físicas, emocionales y espirituales para sentirte bien, en equilibrio y en armonía contigo y con tu entorno.'),
-                    'imagen' => $imagen('Imagen', 'storage/recursos/autocuidado-que-es.png'),
+                    'imagen' => $imagen('Imagen', 'storage/Autocuidado/ritual_vela_y_plantas.png'),
                 ],
             ],
             'pilares' => [
                 'titulo' => 'Cuerpo, mente y espíritu',
                 'campos' => $lista('tarjeta', [
-                    ['titulo' => 'Cuerpo', 'texto' => 'Escucha sus necesidades, nutre tu energía y cuídalo con hábitos que te hagan sentir bien.', 'imagen' => 'storage/recursos/cuerpo.png'],
-                    ['titulo' => 'Mente', 'texto' => 'Calma el ruido, ordena tus ideas y cultiva una mente más serena, clara y positiva.', 'imagen' => 'storage/recursos/mente.png'],
-                    ['titulo' => 'Espíritu', 'texto' => 'Conecta con tu esencia, cultiva la gratitud y descubre aquello que te da propósito y bienestar.', 'imagen' => 'storage/recursos/espiritu.png'],
+                    ['titulo' => 'Cuerpo', 'texto' => 'Escucha sus necesidades, nutre tu energía y cuídalo con hábitos que te hagan sentir bien.', 'imagen' => 'storage/Autocuidado/cuerpo_bienestar.png'],
+                    ['titulo' => 'Mente', 'texto' => 'Calma el ruido, ordena tus ideas y cultiva una mente más serena, clara y positiva.', 'imagen' => 'storage/Autocuidado/mente_escritura_y_te.png'],
+                    ['titulo' => 'Espíritu', 'texto' => 'Conecta con tu esencia, cultiva la gratitud y descubre aquello que te da propósito y bienestar.', 'imagen' => 'storage/Autocuidado/espiritu_meditacion.png'],
                 ], ['titulo' => 'texto', 'texto' => 'parrafo', 'imagen' => 'imagen']),
             ],
             'filosofia' => [
@@ -230,7 +230,7 @@ return [
                     'cierre' => $texto('Final del título', 'vida más plena.'),
                     'texto' => $parrafo('Texto', 'Creemos en un autocuidado que va más allá de la piel: una forma de vivir más consciente, más presente y más feliz. Porque cuando te cuidas de verdad, todo a tu alrededor también florece.'),
                     'boton' => $texto('Texto del botón', 'Comienza tu ritual de bienestar'),
-                    'imagen' => $imagen('Imagen', 'storage/recursos/autocuidado-flor.png'),
+                    'imagen' => $imagen('Imagen', 'storage/Cuidado_capilar/flor_rosada_manifiesto.png'),
                 ],
             ],
         ],
@@ -243,7 +243,7 @@ return [
             'hero' => [
                 'titulo' => 'Banner principal',
                 'campos' => [
-                    'imagen' => $imagen('Imagen del banner (a todo el ancho, sin texto)', 'storage/CuidadoCapilar/01_hero_cuidado_capilar.png'),
+                    'imagen' => $imagen('Imagen del banner (a todo el ancho, sin texto)', 'storage/Cuidado_capilar/Belleza natural en calma spa.png'),
                     'titulo' => $parrafo('Título', 'Cuidado capilar'),
                     'destacado' => $texto('Título destacado (cursiva)', 'consciente.'),
                     'texto' => $parrafo('Texto', 'Rituales y productos naturales para un cabello más fuerte, saludable y lleno de vida.'),
@@ -256,7 +256,7 @@ return [
                     'titulo' => $parrafo('Título', '¿Qué es el'),
                     'destacado' => $texto('Título destacado (cursiva)', 'cuidado capilar?'),
                     'texto' => $parrafo('Texto', 'Es un conjunto de hábitos, productos y rituales que limpian, nutren, fortalecen y equilibran el cabello, respetando su naturaleza y sus necesidades únicas.'),
-                    'imagen' => $imagen('Imagen', 'storage/recursos/capilar-que-es.png'),
+                    'imagen' => $imagen('Imagen', 'storage/Cuidado_capilar/cabello_natural_espalda.png'),
                 ],
             ],
             'rutina' => [
@@ -265,10 +265,10 @@ return [
                     'etiqueta' => $texto('Texto pequeño superior', 'Tu rutina capilar'),
                     'titulo' => $parrafo('Título', 'Un ritual completo para un cabello saludable.'),
                     ...$lista('paso', [
-                        ['titulo' => 'Limpiar', 'texto' => 'Purifica el cuero cabelludo, elimina impurezas y prepara el cabello.', 'imagen' => 'storage/recursos/capilar-limpiar.png'],
-                        ['titulo' => 'Acondicionar', 'texto' => 'Suaviza, desenreda y recupera la hidratación natural.', 'imagen' => 'storage/recursos/capilar-acondicionar.png'],
-                        ['titulo' => 'Nutrir', 'texto' => 'Aporta nutrientes esenciales que fortalecen y revitalizan desde la raíz.', 'imagen' => 'storage/recursos/capilar-nutrir.png'],
-                        ['titulo' => 'Transformar', 'texto' => 'Mejora visiblemente la textura, el brillo y la fuerza de tu cabello.', 'imagen' => 'storage/recursos/capilar-transformar.png'],
+                        ['titulo' => 'Limpiar', 'texto' => 'Purifica el cuero cabelludo, elimina impurezas y prepara el cabello.', 'imagen' => 'storage/Cuidado_capilar/rutina_limpiar.png'],
+                        ['titulo' => 'Acondicionar', 'texto' => 'Suaviza, desenreda y recupera la hidratación natural.', 'imagen' => 'storage/Cuidado_capilar/rutina_acondicionar.png'],
+                        ['titulo' => 'Nutrir', 'texto' => 'Aporta nutrientes esenciales que fortalecen y revitalizan desde la raíz.', 'imagen' => 'storage/Cuidado_capilar/rutina_nutrir.png'],
+                        ['titulo' => 'Transformar', 'texto' => 'Mejora visiblemente la textura, el brillo y la fuerza de tu cabello.', 'imagen' => 'storage/Cuidado_capilar/rutina_transformar.png'],
                     ], ['titulo' => 'texto', 'texto' => 'parrafo', 'imagen' => 'imagen']),
                 ],
             ],
@@ -299,7 +299,7 @@ return [
                     'titulo' => $parrafo('Título', "Ama tu cabello\nde forma consciente."),
                     'texto' => $parrafo('Texto', 'Cuídalo, escúchalo y celebra su naturaleza. Creemos en un cuidado capilar real, natural y respetuoso, que te ayude a sentirte bien por dentro y por fuera.'),
                     'boton' => $texto('Texto del botón', 'Explora nuestros productos'),
-                    'imagen' => $imagen('Imagen', 'storage/recursos/autocuidado-flor.png'),
+                    'imagen' => $imagen('Imagen', 'storage/Cuidado_capilar/flor_rosada_manifiesto.png'),
                 ],
             ],
         ],
