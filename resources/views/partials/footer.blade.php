@@ -6,7 +6,7 @@
                 <a href="{{ route('inicio') }}" class="inline-block" aria-label="{{ config('tienda.nombre') }}">
                     @include('partials.logo', ['claro' => true])
                 </a>
-                <p class="mt-5 max-w-[14rem] text-xs leading-relaxed text-white/70">Cuidado consciente para tu cabello.</p>
+                <p class="mt-5 max-w-[14rem] text-xs leading-relaxed text-white/70">{{ contenido('general.marca.descripcion') }}</p>
                 <div class="mt-5 flex items-center gap-3 text-xs">
                     <span class="font-medium text-white">Síguenos:</span>
                     @include('partials.iconos-redes', ['clase' => 'h-4 w-4'])
