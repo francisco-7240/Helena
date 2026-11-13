@@ -1,23 +1,21 @@
 <x-tienda-layout titulo="Cuidado capilar">
-    {{-- Hero --}}
+    {{-- Hero: la foto es un banner a todo el ancho (incluye los productos) y el texto va encima, arriba a la derecha --}}
     <section class="relative overflow-hidden bg-helena-crema">
-        @include('partials.hojas', ['clase' => 'pointer-events-none absolute -right-16 -top-10 h-[26rem] w-[26rem] opacity-40'])
-        <div class="relative grid md:grid-cols-[0.9fr_1.1fr]">
-            <x-foto src="storage/recursos/capilar-hero.png" alt="Mujer con cabello largo y saludable" class="h-80 w-full md:h-full md:min-h-[34rem]" />
-            <div class="px-6 sm:px-12 pt-14 md:pt-16">
-                <h1 class="font-serif text-5xl sm:text-6xl leading-[0.95] text-helena-verde-oscuro">
+        <x-foto src="storage/CuidadoCapilar/01_hero_cuidado_capilar.png" alt="Mujer con cabello largo y saludable junto a los productos Helena"
+                class="h-80 w-full object-cover object-left md:absolute md:inset-0 md:h-full" />
+
+        <div class="relative max-w-7xl mx-auto px-6 sm:px-12 md:flex md:min-h-[34rem] md:justify-end lg:min-h-[38rem]">
+            <div class="py-14 md:w-[56%] md:pt-16 md:pb-0">
+                <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[0.95] text-helena-verde-oscuro">
                     Cuidado capilar<br><em class="text-[#5b3f2e]">consciente.</em>
                 </h1>
                 <p class="mt-5 max-w-md text-sm leading-relaxed text-helena-oscuro/80">
                     Rituales y productos naturales para un cabello más fuerte, saludable y lleno de vida.
                 </p>
-                <div class="mt-6 flex flex-col-reverse items-start gap-6 lg:flex-row lg:items-end">
-                    <x-foto src="storage/recursos/capilar-productos.png" alt="Productos de cuidado capilar Helena" class="aspect-[16/9] w-full max-w-md object-contain" />
-                    <a href="#que-es" class="group inline-flex shrink-0 items-center gap-3 bg-helena-rosa-oscuro px-6 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-white transition hover:bg-helena-oscuro lg:mb-auto">
-                        Descubre el cuidado capilar
-                        <svg class="h-3 w-5 transition group-hover:translate-x-1" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 6h18M13 1l5 5-5 5"/></svg>
-                    </a>
-                </div>
+                <a href="#que-es" class="group mt-6 inline-flex items-center gap-3 bg-helena-rosa-oscuro px-6 py-3 text-[10px] font-medium uppercase tracking-[0.2em] text-white transition hover:bg-helena-oscuro md:float-right md:mt-4">
+                    Descubre el cuidado capilar
+                    <svg class="h-3 w-5 transition group-hover:translate-x-1" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 6h18M13 1l5 5-5 5"/></svg>
+                </a>
             </div>
         </div>
     </section>
