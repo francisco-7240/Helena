@@ -5,3 +5,12 @@
 [x-cloak] {
     display: none !important;
 }
+
+/*
+ * Tipografía fluida para la tienda: todo el sitio (textos, espacios y anchos,
+ * que Tailwind expresa en rem) crece de forma proporcional al ancho de la pantalla:
+ * 16px en móviles, ~18px en 1440px y hasta 21px en pantallas muy grandes.
+ */
+.escala-fluida {
+    font-size: clamp(16px, 0.4vw + 12.5px, 21px);
+}

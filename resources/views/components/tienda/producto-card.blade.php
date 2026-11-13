@@ -8,7 +8,7 @@
     </div>
     <div class="mt-3">
         @if ($producto->relationLoaded('categoria') && $producto->categoria)
-            <p class="text-xs uppercase tracking-wider text-stone-500">{{ $producto->categoria->nombre }}</p>
+            <p class="text-xs sm:text-sm uppercase tracking-wider text-stone-500">{{ $producto->categoria->nombre }}</p>
         @endif
         <h3 class="mt-1 font-medium text-stone-900 group-hover:text-helena-verde">{{ $producto->nombre }}</h3>
         <p class="mt-1 text-sm">

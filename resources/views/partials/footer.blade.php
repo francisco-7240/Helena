@@ -6,7 +6,7 @@
                 <a href="{{ route('inicio') }}" class="inline-block" aria-label="{{ config('tienda.nombre') }}">
                     @include('partials.logo', ['claro' => true])
                 </a>
-                <p class="mt-5 max-w-[14rem] text-xs leading-relaxed text-white/70">{{ contenido('general.marca.descripcion') }}</p>
+                <p class="mt-5 max-w-[14rem] text-sm sm:text-base leading-relaxed text-white/70">{{ contenido('general.marca.descripcion') }}</p>
                 <div class="mt-5 flex items-center gap-3 text-xs">
                     <span class="font-medium text-white">Síguenos:</span>
                     @include('partials.iconos-redes', ['clase' => 'h-4 w-4'])
@@ -14,7 +14,7 @@
             </div>
 
             <div>
-                <p class="text-xs font-medium uppercase tracking-wider text-white">Explora</p>
+                <p class="text-xs sm:text-sm font-medium uppercase tracking-wider text-white">Explora</p>
                 <ul class="mt-4 space-y-1.5 text-xs">
                     <li><a href="{{ route('inicio') }}" class="hover:text-white">Inicio</a></li>
                     <li><a href="{{ route('nosotros') }}" class="hover:text-white">Nosotros</a></li>
@@ -26,7 +26,7 @@
             </div>
 
             <div>
-                <p class="text-xs font-medium uppercase tracking-wider text-white">Háblanos</p>
+                <p class="text-xs sm:text-sm font-medium uppercase tracking-wider text-white">Háblanos</p>
                 <ul class="mt-4 space-y-4 text-xs">
                     <li><a href="mailto:{{ config('tienda.email') }}" class="hover:text-white">{{ config('tienda.email') }}</a></li>
                     @if (config('tienda.direccion'))
@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <div class="mt-14 border-t border-white/20 pt-6 text-center text-[11px] text-white/50">
+        <div class="mt-14 border-t border-white/20 pt-6 text-center text-xs text-white/50">
             © {{ date('Y') }} {{ config('tienda.nombre') }}. Todos los derechos reservados.
         </div>
     </div>

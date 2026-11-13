@@ -18,7 +18,7 @@
                 <button type="button" @click="abierto = !abierto" class="lg:hidden p-1 text-helena-oscuro" aria-label="Abrir menú">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
                 </button>
-                <nav class="hidden lg:flex items-center gap-3 text-[13px] text-helena-oscuro">
+                <nav class="hidden lg:flex items-center gap-3 text-sm text-helena-oscuro">
                     @foreach ($enlacesIzquierda as [$texto, $url])
                         @unless ($loop->first)<span class="text-helena-verde/50">·</span>@endunless
                         <a href="{{ $url }}" class="hover:text-helena-verde transition">{{ $texto }}</a>
@@ -33,7 +33,7 @@
 
             {{-- Derecha --}}
             <div class="flex items-center justify-end gap-4">
-                <nav class="hidden lg:flex items-center gap-3 text-[13px] text-helena-oscuro">
+                <nav class="hidden lg:flex items-center gap-3 text-sm text-helena-oscuro">
                     @foreach ($enlacesDerecha as [$texto, $url])
                         @unless ($loop->first)<span class="text-helena-verde/50">·</span>@endunless
                         <a href="{{ $url }}" class="hover:text-helena-verde transition">{{ $texto }}</a>
@@ -76,7 +76,7 @@
                 <a href="{{ route('carrito.index') }}" class="relative text-helena-oscuro hover:text-helena-verde" aria-label="Carrito">
                     <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor"><path d="M2 3h2.6l.6 2H21l-2.2 8.2a1.5 1.5 0 0 1-1.4 1.1H8.3l.4 1.5H18v2H7.2L4.2 5H2V3Zm5.7 4 1.6 5.3h8l1.4-5.3h-11ZM9 20.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm10 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg>
                     @if ($cantidadCarrito > 0)
-                        <span class="absolute -top-2 -right-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-helena-verde px-1 text-[10px] font-semibold text-white">{{ $cantidadCarrito }}</span>
+                        <span class="absolute -top-2 -right-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-helena-verde px-1 text-xs font-semibold text-white">{{ $cantidadCarrito }}</span>
                     @endif
                 </a>
             </div>

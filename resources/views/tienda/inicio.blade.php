@@ -14,7 +14,7 @@
                 <h1 class="font-serif text-6xl sm:text-7xl lg:text-8xl leading-[0.9] text-helena-oscuro">
                     <x-contenido.titulo clave="inicio.hero" clase-destacado="text-helena-verde" />
                 </h1>
-                <p class="mt-6 text-sm text-helena-oscuro">{{ contenido('inicio.hero.texto') }}</p>
+                <p class="mt-6 text-base sm:text-lg text-helena-oscuro">{{ contenido('inicio.hero.texto') }}</p>
                 <x-tienda.boton-flecha :href="route('cuidado-capilar')" class="mt-8">{{ contenido('inicio.hero.boton') }}</x-tienda.boton-flecha>
             </div>
             <div class="flex justify-center md:justify-end">
@@ -27,11 +27,11 @@
     <section id="nosotros" class="grid md:grid-cols-2 scroll-mt-20">
         <div class="flex items-center px-6 sm:px-10 lg:px-24 py-20">
             <div class="max-w-sm">
-                <p class="text-xs text-helena-oscuro">{{ contenido('inicio.que_es.etiqueta') }}</p>
+                <p class="text-xs sm:text-sm text-helena-oscuro">{{ contenido('inicio.que_es.etiqueta') }}</p>
                 <h2 class="mt-4 font-serif italic text-5xl lg:text-6xl leading-tight">
                     <x-contenido.titulo clave="inicio.que_es" clase-destacado="text-helena-verde" />
                 </h2>
-                <p class="mt-6 text-xs leading-relaxed text-helena-oscuro/80">{{ contenido_html('inicio.que_es.texto') }}</p>
+                <p class="mt-6 text-sm sm:text-base leading-relaxed text-helena-oscuro/80">{{ contenido_html('inicio.que_es.texto') }}</p>
                 <x-tienda.boton-flecha :href="route('nosotros')" class="mt-8">{{ contenido('inicio.que_es.boton') }}</x-tienda.boton-flecha>
             </div>
         </div>
@@ -41,7 +41,7 @@
     {{-- Autocuidado --}}
     <section id="autocuidado" class="bg-helena-crema py-20 scroll-mt-20">
         <div class="max-w-5xl mx-auto px-6">
-            <p class="text-xs text-helena-oscuro">{{ contenido('inicio.autocuidado.etiqueta') }}</p>
+            <p class="text-xs sm:text-sm text-helena-oscuro">{{ contenido('inicio.autocuidado.etiqueta') }}</p>
             <h2 class="mt-2 font-serif italic text-5xl lg:text-6xl">{{ contenido('inicio.autocuidado.titulo') }}</h2>
 
             <div class="mt-10 grid gap-8 sm:grid-cols-3">
@@ -49,7 +49,7 @@
                     <article>
                         <x-foto :src="contenido('inicio.autocuidado.imagen_'.$n)" :alt="contenido('inicio.autocuidado.titulo_'.$n)" class="aspect-[5/6] w-full" />
                         <h3 class="mt-4 font-serif italic text-3xl">{{ contenido('inicio.autocuidado.titulo_'.$n) }}</h3>
-                        <p class="mt-1 max-w-[16rem] text-[11px] leading-relaxed text-helena-oscuro/70">{{ contenido_html('inicio.autocuidado.texto_'.$n) }}</p>
+                        <p class="mt-1 max-w-[16rem] text-sm sm:text-base leading-relaxed text-helena-oscuro/70">{{ contenido_html('inicio.autocuidado.texto_'.$n) }}</p>
                     </article>
                 @endforeach
             </div>
@@ -61,9 +61,9 @@
         @include('partials.hojas', ['clase' => 'pointer-events-none absolute right-0 -bottom-20 h-[36rem] w-[36rem] opacity-60'])
         <div class="relative max-w-5xl mx-auto px-6 py-24 grid gap-12 md:grid-cols-2 items-center">
             <div>
-                <p class="text-xs text-white/80">{{ contenido('inicio.capilar.etiqueta') }}</p>
+                <p class="text-xs sm:text-sm text-white/80">{{ contenido('inicio.capilar.etiqueta') }}</p>
                 <h2 class="mt-4 font-serif text-6xl lg:text-7xl leading-[0.95]"><x-contenido.titulo clave="inicio.capilar" /></h2>
-                <p class="mt-6 max-w-xs text-[11px] leading-relaxed text-white/70">{{ contenido_html('inicio.capilar.texto') }}</p>
+                <p class="mt-6 max-w-xs text-sm sm:text-base leading-relaxed text-white/70">{{ contenido_html('inicio.capilar.texto') }}</p>
                 <x-tienda.boton-flecha :href="route('tienda.catalogo')" claro class="mt-8">{{ contenido('inicio.capilar.boton') }}</x-tienda.boton-flecha>
             </div>
             <ul class="md:justify-self-center w-full max-w-[14rem] font-serif italic text-2xl">
@@ -77,7 +77,7 @@
     {{-- Productos --}}
     <section class="py-24">
         <div class="max-w-5xl mx-auto px-6">
-            <p class="text-xs text-helena-oscuro">{{ contenido('inicio.productos.etiqueta') }}</p>
+            <p class="text-xs sm:text-sm text-helena-oscuro">{{ contenido('inicio.productos.etiqueta') }}</p>
             <h2 class="mt-3 font-serif text-5xl lg:text-6xl leading-[0.95]"><x-contenido.titulo clave="inicio.productos" clase-destacado="text-helena-verde" /></h2>
 
             @if ($productos->isEmpty())
@@ -94,7 +94,7 @@
                                 <a href="{{ route('tienda.producto', $producto) }}" class="hover:text-helena-verde">{{ $producto->nombre }}</a>
                             </h3>
                             @if ($producto->descripcion)
-                                <p class="mt-1 text-[10px] leading-relaxed text-helena-oscuro/60">{{ Str::limit($producto->descripcion, 60) }}</p>
+                                <p class="mt-1 text-sm sm:text-base leading-relaxed text-helena-oscuro/60">{{ Str::limit($producto->descripcion, 60) }}</p>
                             @endif
                             <p class="mt-1 text-xs font-medium">@precio($producto->precioFinal())</p>
                             <div class="mt-3">
@@ -103,13 +103,13 @@
                                         @csrf
                                         <input type="hidden" name="producto_color_id" value="{{ $variante->id }}">
                                         <input type="hidden" name="cantidad" value="1">
-                                        <button class="group inline-flex items-center gap-2 rounded-full bg-helena-verde px-4 py-1.5 text-[10px] text-white transition hover:bg-helena-verde-oscuro">
+                                        <button class="group inline-flex items-center gap-2 rounded-full bg-helena-verde px-4 py-1.5 text-xs text-white transition hover:bg-helena-verde-oscuro">
                                             Añadir al carrito
                                             <svg class="h-2.5 w-4 transition group-hover:translate-x-0.5" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 6h18M13 1l5 5-5 5"/></svg>
                                         </button>
                                     </form>
                                 @else
-                                    <span class="inline-flex rounded-full bg-stone-200 px-4 py-1.5 text-[10px] text-stone-500">Agotado</span>
+                                    <span class="inline-flex rounded-full bg-stone-200 px-4 py-1.5 text-xs text-stone-500">Agotado</span>
                                 @endif
                             </div>
                         </article>
@@ -127,9 +127,9 @@
         @include('partials.hojas', ['clase' => 'pointer-events-none absolute -left-16 top-0 h-[34rem] w-[34rem] opacity-70'])
         <div class="relative max-w-5xl mx-auto px-6 py-28 grid md:grid-cols-2">
             <div class="md:col-start-2">
-                <p class="text-xs text-helena-oscuro">{{ contenido('inicio.manifiesto.etiqueta') }}</p>
+                <p class="text-xs sm:text-sm text-helena-oscuro">{{ contenido('inicio.manifiesto.etiqueta') }}</p>
                 <h2 class="mt-4 font-serif text-5xl lg:text-6xl leading-[1.05]"><x-contenido.titulo clave="inicio.manifiesto" clase-destacado="text-helena-verde" /></h2>
-                <p class="mt-6 max-w-sm text-[11px] leading-relaxed text-white">{{ contenido_html('inicio.manifiesto.texto') }}</p>
+                <p class="mt-6 max-w-sm text-sm sm:text-base leading-relaxed text-white">{{ contenido_html('inicio.manifiesto.texto') }}</p>
                 <x-tienda.boton-flecha :href="route('nosotros')" claro class="mt-8">{{ contenido('inicio.manifiesto.boton') }}</x-tienda.boton-flecha>
             </div>
         </div>

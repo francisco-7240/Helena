@@ -9,8 +9,8 @@
                 <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[0.95] text-helena-oscuro">
                     <x-contenido.titulo clave="autocuidado.hero" clase-destacado="text-helena-rosa-oscuro" />
                 </h1>
-                <p class="mt-6 max-w-md text-sm leading-relaxed text-helena-oscuro/80">{{ contenido_html('autocuidado.hero.texto') }}</p>
-                <a href="#que-es" class="group mt-8 inline-flex items-center gap-3 bg-helena-rosa-oscuro px-7 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition hover:bg-helena-oscuro">
+                <p class="mt-6 max-w-md text-sm sm:text-base leading-relaxed text-helena-oscuro/80">{{ contenido_html('autocuidado.hero.texto') }}</p>
+                <a href="#que-es" class="group mt-8 inline-flex items-center gap-3 bg-helena-rosa-oscuro px-7 py-3 text-xs font-medium uppercase tracking-[0.2em] text-white transition hover:bg-helena-oscuro">
                     {{ contenido('autocuidado.hero.boton') }}
                     <svg class="h-3 w-5 transition group-hover:translate-x-1" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 6h18M13 1l5 5-5 5"/></svg>
                 </a>
@@ -24,7 +24,7 @@
             <div class="px-6 sm:px-12 lg:px-16 py-14">
                 <h2 class="font-serif text-4xl sm:text-5xl leading-tight">{{ contenido_html('autocuidado.que_es.titulo') }}</h2>
                 <div class="mt-5 h-0.5 w-14 bg-helena-rosa-oscuro"></div>
-                <p class="mt-6 max-w-md text-sm leading-relaxed text-helena-oscuro/80">{{ contenido_html('autocuidado.que_es.texto') }}</p>
+                <p class="mt-6 max-w-md text-sm sm:text-base leading-relaxed text-helena-oscuro/80">{{ contenido_html('autocuidado.que_es.texto') }}</p>
             </div>
             <x-foto :src="contenido('autocuidado.que_es.imagen')" alt="Vela, plantas y textiles suaves" class="h-72 w-full md:h-80" />
         </div>
@@ -37,7 +37,7 @@
                 <article class="text-center">
                     <x-foto :src="contenido('autocuidado.pilares.imagen_'.$n)" :alt="contenido('autocuidado.pilares.titulo_'.$n)" class="aspect-[4/3] w-full" />
                     <h3 class="mt-5 font-serif text-4xl">{{ contenido('autocuidado.pilares.titulo_'.$n) }}</h3>
-                    <p class="mx-auto mt-3 max-w-[17rem] text-sm leading-relaxed text-helena-oscuro/80">{{ contenido_html('autocuidado.pilares.texto_'.$n) }}</p>
+                    <p class="mx-auto mt-3 max-w-[17rem] text-sm sm:text-base leading-relaxed text-helena-oscuro/80">{{ contenido_html('autocuidado.pilares.texto_'.$n) }}</p>
                     <div class="mx-auto mt-5 h-0.5 w-12 bg-helena-rosa-oscuro"></div>
                 </article>
             @endforeach
@@ -48,7 +48,7 @@
     <section class="relative overflow-hidden bg-helena-arena/60 py-20">
         @include('partials.hojas', ['clase' => 'pointer-events-none absolute -left-20 top-0 h-[26rem] w-[26rem] opacity-40'])
         <div class="relative max-w-6xl mx-auto px-6 text-center">
-            <p class="text-xs font-medium uppercase tracking-[0.35em] text-helena-rosa-oscuro">{{ contenido('autocuidado.filosofia.etiqueta') }}</p>
+            <p class="text-xs sm:text-sm font-medium uppercase tracking-[0.35em] text-helena-rosa-oscuro">{{ contenido('autocuidado.filosofia.etiqueta') }}</p>
             <h2 class="mt-4 font-serif italic text-4xl sm:text-5xl">{{ contenido_html('autocuidado.filosofia.titulo') }}</h2>
 
             <div class="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-helena-oscuro/15">
@@ -71,7 +71,7 @@
                             @endswitch
                         </svg>
                         <h3 class="mt-5 font-serif text-2xl leading-tight">{{ contenido_html('autocuidado.filosofia.titulo_'.$n) }}</h3>
-                        <p class="mx-auto mt-3 max-w-[14rem] text-sm leading-relaxed text-helena-oscuro/80">{{ contenido_html('autocuidado.filosofia.texto_'.$n) }}</p>
+                        <p class="mx-auto mt-3 max-w-[14rem] text-sm sm:text-base leading-relaxed text-helena-oscuro/80">{{ contenido_html('autocuidado.filosofia.texto_'.$n) }}</p>
                     </article>
                 @endforeach
             </div>
@@ -89,8 +89,8 @@
                 <h2 class="mt-5 font-serif italic text-4xl sm:text-5xl lg:text-6xl leading-tight">
                     <x-contenido.titulo clave="autocuidado.manifiesto" etiqueta="span" clase-destacado="text-helena-rosa-oscuro" en-linea />
                 </h2>
-                <p class="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-helena-oscuro/80">{{ contenido_html('autocuidado.manifiesto.texto') }}</p>
-                <a href="{{ route('tienda.catalogo') }}" class="group mt-8 inline-flex items-center gap-3 bg-helena-verde px-7 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition hover:bg-helena-verde-oscuro">
+                <p class="mx-auto mt-6 max-w-xl text-sm sm:text-base leading-relaxed text-helena-oscuro/80">{{ contenido_html('autocuidado.manifiesto.texto') }}</p>
+                <a href="{{ route('tienda.catalogo') }}" class="group mt-8 inline-flex items-center gap-3 bg-helena-verde px-7 py-3 text-xs font-medium uppercase tracking-[0.2em] text-white transition hover:bg-helena-verde-oscuro">
                     {{ contenido('autocuidado.manifiesto.boton') }}
                     <svg class="h-3 w-5 transition group-hover:translate-x-1" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 6h18M13 1l5 5-5 5"/></svg>
                 </a>

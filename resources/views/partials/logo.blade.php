@@ -7,6 +7,6 @@
 @else
     <span class="flex flex-col items-center leading-none">
         <span @class(['font-serif italic font-semibold text-4xl tracking-wide', 'text-helena-verde' => ! $claro, 'text-white' => $claro])>{{ config('tienda.nombre') }}</span>
-        <span @class(['mt-1 text-[9px] uppercase tracking-[0.45em]', 'text-helena-verde/80' => ! $claro, 'text-white/70' => $claro])>{{ config('tienda.eslogan') }}</span>
+        <span @class(['mt-1 text-[0.6rem] uppercase tracking-[0.45em]', 'text-helena-verde/80' => ! $claro, 'text-white/70' => $claro])>{{ config('tienda.eslogan') }}</span>
     </span>
 @endif
