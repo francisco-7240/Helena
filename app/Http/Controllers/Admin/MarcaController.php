@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Marca;
+use App\Support\ArchivoSubido;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -79,7 +80,7 @@ class MarcaController extends Controller
             if ($marca?->imagen) {
                 Storage::disk('public')->delete($marca->imagen);
             }
-            $datos['imagen'] = $request->file('imagen')->store('marcas', 'public');
+            $datos['imagen'] = ArchivoSubido::guardarConNombreOriginal($request->file('imagen'), 'marcas');
         } else {
             unset($datos['imagen']);
         }

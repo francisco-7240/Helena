@@ -8,6 +8,7 @@ use App\Models\Categoria;
 use App\Models\Color;
 use App\Models\Marca;
 use App\Models\Producto;
+use App\Support\ArchivoSubido;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -128,7 +129,7 @@ class ProductoController extends Controller
         $orden = (int) $producto->imagenes()->max('orden');
         foreach ($request->file('imagenes', []) as $archivo) {
             $producto->imagenes()->create([
-                'imagen' => $archivo->store("productos/{$producto->id}", 'public'),
+                'imagen' => ArchivoSubido::guardarConNombreOriginal($archivo, "productos/{$producto->id}"),
                 'orden' => ++$orden,
             ]);
         }

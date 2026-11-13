@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
+use App\Support\ArchivoSubido;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -86,7 +87,7 @@ class CategoriaController extends Controller
             if ($categoria?->imagen) {
                 Storage::disk('public')->delete($categoria->imagen);
             }
-            $datos['imagen'] = $request->file('imagen')->store('categorias', 'public');
+            $datos['imagen'] = ArchivoSubido::guardarConNombreOriginal($request->file('imagen'), 'categorias');
         } else {
             unset($datos['imagen']);
         }

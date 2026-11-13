@@ -97,6 +97,20 @@ class ContenidoSitioTest extends TestCase
         Storage::disk('public')->assertMissing(substr($ruta, strlen('storage/')));
     }
 
+    public function test_las_imagenes_se_guardan_con_su_nombre_original_sin_sobrescribir(): void
+    {
+        Storage::fake('public');
+
+        $this->actingAs($this->admin())->put(route('admin.paginas.update', 'nosotros'), [
+            'nosotros__historia__imagen' => UploadedFile::fake()->image('Foto fundadora.jpg'),
+            'nosotros__mas_alla__imagen' => UploadedFile::fake()->image('Foto fundadora.jpg'),
+        ])->assertSessionHasNoErrors();
+
+        $this->assertDatabaseHas('contenidos', ['clave' => 'nosotros.historia.imagen', 'valor' => 'storage/contenidos/Foto fundadora.jpg']);
+        $this->assertDatabaseHas('contenidos', ['clave' => 'nosotros.mas_alla.imagen', 'valor' => 'storage/contenidos/Foto fundadora-1.jpg']);
+        Storage::disk('public')->assertExists(['contenidos/Foto fundadora.jpg', 'contenidos/Foto fundadora-1.jpg']);
+    }
+
     public function test_solo_se_aceptan_imagenes(): void
     {
         $this->actingAs($this->admin())

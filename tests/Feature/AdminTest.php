@@ -80,6 +80,7 @@ class AdminTest extends TestCase
         $this->assertSame('bolso-helena', $producto->slug);
         $this->assertSame(6, $producto->stockTotal());
         $this->assertTrue($producto->imagenes->sole()->es_portada);
+        $this->assertSame("productos/{$producto->id}/bolso.jpg", $producto->imagenes->sole()->imagen);
         Storage::disk('public')->assertExists($producto->imagenes->sole()->imagen);
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Services\Contenidos;
+use App\Support\ArchivoSubido;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -51,7 +52,7 @@ class PaginaController extends Controller
 
                 if ($request->hasFile($nombre)) {
                     $this->borrarImagenSubida($actual);
-                    $valores[$clave] = 'storage/'.$request->file($nombre)->store(self::CARPETA, 'public');
+                    $valores[$clave] = 'storage/'.ArchivoSubido::guardarConNombreOriginal($request->file($nombre), self::CARPETA);
                 } elseif ($request->boolean($nombre.'_restaurar')) {
                     $this->borrarImagenSubida($actual);
                     $valores[$clave] = null;
