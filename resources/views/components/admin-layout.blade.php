@@ -20,6 +20,8 @@
                 ['admin.marcas.index', 'admin.marcas.*', 'Marcas'],
                 ['admin.colores.index', 'admin.colores.*', 'Colores'],
                 ['admin.contactos.index', 'admin.contactos.*', 'Mensajes'],
+                ['admin.paginas.index', 'admin.paginas.*', 'Contenido del sitio'],
+                ['admin.usuarios.index', 'admin.usuarios.*', 'Usuarios'],
             ];
         @endphp
         <div x-data="{ menu: false }" class="min-h-screen md:flex">

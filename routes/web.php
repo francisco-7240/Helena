@@ -56,6 +56,13 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::resource('productos', Admin\ProductoController::class)->except('show')->parameters(['productos' => 'producto']);
     Route::resource('pedidos', Admin\PedidoController::class)->only(['index', 'show', 'update'])->parameters(['pedidos' => 'pedido']);
     Route::resource('contactos', Admin\ContactoController::class)->only(['index', 'update', 'destroy'])->parameters(['contactos' => 'contacto']);
+
+    Route::get('paginas', [Admin\PaginaController::class, 'index'])->name('paginas.index');
+    Route::get('paginas/{pagina}', [Admin\PaginaController::class, 'edit'])->name('paginas.edit');
+    Route::put('paginas/{pagina}', [Admin\PaginaController::class, 'update'])->name('paginas.update');
+
+    Route::get('usuarios', [Admin\UsuarioController::class, 'index'])->name('usuarios.index');
+    Route::patch('usuarios/{usuario}', [Admin\UsuarioController::class, 'update'])->name('usuarios.update');
 });
 
 require __DIR__.'/auth.php';
