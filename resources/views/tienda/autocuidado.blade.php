@@ -1,10 +1,11 @@
 <x-tienda-layout titulo="Autocuidado">
-    {{-- Hero --}}
+    {{-- Hero: la foto es un banner a todo el ancho y el texto va encima, a la derecha --}}
     <section class="relative overflow-hidden bg-helena-crema">
-        @include('partials.hojas', ['clase' => 'pointer-events-none absolute -right-16 -bottom-16 h-[28rem] w-[28rem] opacity-40'])
-        <div class="relative grid items-center md:grid-cols-2">
-            <x-foto src="storage/recursos/autocuidado-hero.png" alt="Mujer disfrutando un momento de autocuidado" class="h-80 w-full md:h-[34rem]" />
-            <div class="px-6 sm:px-12 lg:px-16 py-14">
+        <x-foto src="storage/Autocuidado/01_hero_mujer_autocuidado.png" alt="Mujer disfrutando un momento de autocuidado"
+                class="h-80 w-full object-cover object-left md:absolute md:inset-0 md:h-full" />
+
+        <div class="relative max-w-7xl mx-auto px-6 sm:px-12 md:flex md:min-h-[34rem] md:items-center md:justify-end lg:min-h-[38rem]">
+            <div class="py-14 md:w-1/2 md:pl-12">
                 <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[0.95] text-helena-oscuro">
                     Me cuido,<br>me escucho,<br><em class="text-helena-rosa-oscuro">me amo.</em>
                 </h1>
