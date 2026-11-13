@@ -1,7 +1,7 @@
 <x-tienda-layout titulo="Cuidado capilar">
     {{-- Hero: la foto es un banner a todo el ancho (incluye los productos) y el texto va encima, arriba a la derecha --}}
     <section class="relative overflow-hidden bg-helena-crema">
-        <x-foto src="storage/CuidadoCapilar/01_hero_cuidado_capilar.png" alt="Mujer con cabello largo y saludable junto a los productos Helena"
+        <x-foto src="storage/Cuidado_capilar/Belleza natural en calma spa.png" alt="Mujer con cabello largo y saludable junto a los productos Helena"
                 class="h-80 w-full object-cover object-left md:absolute md:inset-0 md:h-full" />
 
         <div class="relative max-w-7xl mx-auto px-6 sm:px-12 md:flex md:min-h-[34rem] md:justify-end lg:min-h-[38rem]">
@@ -30,7 +30,7 @@
                     Es un conjunto de hábitos, productos y rituales que limpian, nutren, fortalecen y equilibran el cabello, respetando su naturaleza y sus necesidades únicas.
                 </p>
             </div>
-            <x-foto src="storage/recursos/capilar-que-es.png" alt="Mujer acomodando su cabello" class="h-72 w-full md:h-96" />
+            <x-foto src="storage/Cuidado_capilar/cabello_natural_espalda.png" alt="Mujer acomodando su cabello" class="h-72 w-full md:h-96" />
         </div>
     </section>
 
@@ -44,10 +44,10 @@
 
             <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
                 @foreach ([
-                    ['Limpiar', 'Purifica el cuero cabelludo, elimina impurezas y prepara el cabello.', 'storage/recursos/capilar-limpiar.png'],
-                    ['Acondicionar', 'Suaviza, desenreda y recupera la hidratación natural.', 'storage/recursos/capilar-acondicionar.png'],
-                    ['Nutrir', 'Aporta nutrientes esenciales que fortalecen y revitalizan desde la raíz.', 'storage/recursos/capilar-nutrir.png'],
-                    ['Transformar', 'Mejora visiblemente la textura, el brillo y la fuerza de tu cabello.', 'storage/recursos/capilar-transformar.png'],
+                    ['Limpiar', 'Purifica el cuero cabelludo, elimina impurezas y prepara el cabello.', 'storage/Cuidado_capilar/rutina_limpiar.png'],
+                    ['Acondicionar', 'Suaviza, desenreda y recupera la hidratación natural.', 'storage/Cuidado_capilar/rutina_acondicionar.png'],
+                    ['Nutrir', 'Aporta nutrientes esenciales que fortalecen y revitalizan desde la raíz.', 'storage/Cuidado_capilar/rutina_nutrir.png'],
+                    ['Transformar', 'Mejora visiblemente la textura, el brillo y la fuerza de tu cabello.', 'storage/Cuidado_capilar/rutina_transformar.png'],
                 ] as [$paso, $texto, $imagen])
                     <article>
                         <x-foto :src="$imagen" :alt="$paso" class="aspect-[3/2] w-full" />
@@ -126,7 +126,7 @@
     {{-- Nuestro manifiesto --}}
     <section class="relative overflow-hidden bg-helena-rosa-claro">
         <div class="grid items-center md:grid-cols-[0.8fr_1.2fr]">
-            <x-foto src="storage/recursos/autocuidado-flor.png" alt="Flor rosada" class="h-64 w-full md:h-[24rem]" />
+            <x-foto src="storage/Cuidado_capilar/flor_rosada_manifiesto.png" alt="Flor rosada" class="h-64 w-full md:h-[24rem]" />
             <div class="px-6 sm:px-12 py-14 text-center">
                 <p class="text-xs font-medium uppercase tracking-[0.35em] text-helena-rosa-oscuro">Nuestro manifiesto</p>
                 <h2 class="mt-4 font-serif italic text-4xl sm:text-5xl lg:text-6xl leading-tight text-[#5b3f2e]">

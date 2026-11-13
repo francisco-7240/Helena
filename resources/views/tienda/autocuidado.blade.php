@@ -1,7 +1,7 @@
 <x-tienda-layout titulo="Autocuidado">
     {{-- Hero: la foto es un banner a todo el ancho y el texto va encima, a la derecha --}}
     <section class="relative overflow-hidden bg-helena-crema">
-        <x-foto src="storage/Autocuidado/01_hero_mujer_autocuidado.png" alt="Mujer disfrutando un momento de autocuidado"
+        <x-foto src="storage/Autocuidado/Belleza serena entre luz y hojas.png" alt="Mujer disfrutando un momento de autocuidado"
                 class="h-80 w-full object-cover object-left md:absolute md:inset-0 md:h-full" />
 
         <div class="relative max-w-7xl mx-auto px-6 sm:px-12 md:flex md:min-h-[34rem] md:items-center md:justify-end lg:min-h-[38rem]">
@@ -30,7 +30,7 @@
                     Es la práctica consciente de atender tus necesidades físicas, emocionales y espirituales para sentirte bien, en equilibrio y en armonía contigo y con tu entorno.
                 </p>
             </div>
-            <x-foto src="storage/recursos/autocuidado-que-es.png" alt="Vela, plantas y textiles suaves" class="h-72 w-full md:h-80" />
+            <x-foto src="storage/Autocuidado/ritual_vela_y_plantas.png" alt="Vela, plantas y textiles suaves" class="h-72 w-full md:h-80" />
         </div>
     </section>
 
@@ -38,9 +38,9 @@
     <section class="bg-helena-crema/60 pt-10 pb-16">
         <div class="max-w-6xl mx-auto px-6 grid gap-10 sm:grid-cols-3">
             @foreach ([
-                ['Cuerpo', 'Escucha sus necesidades, nutre tu energía y cuídalo con hábitos que te hagan sentir bien.', 'storage/recursos/cuerpo.png'],
-                ['Mente', 'Calma el ruido, ordena tus ideas y cultiva una mente más serena, clara y positiva.', 'storage/recursos/mente.png'],
-                ['Espíritu', 'Conecta con tu esencia, cultiva la gratitud y descubre aquello que te da propósito y bienestar.', 'storage/recursos/espiritu.png'],
+                ['Cuerpo', 'Escucha sus necesidades, nutre tu energía y cuídalo con hábitos que te hagan sentir bien.', 'storage/autocuidado/cuerpo_bienestar.png'],
+                ['Mente', 'Calma el ruido, ordena tus ideas y cultiva una mente más serena, clara y positiva.', 'storage/autocuidado/mente_escritura_y_te.png'],
+                ['Espíritu', 'Conecta con tu esencia, cultiva la gratitud y descubre aquello que te da propósito y bienestar.', 'storage/autocuidado/espiritu_meditacion.png'],
             ] as [$titulo, $texto, $imagen])
                 <article class="text-center">
                     <x-foto :src="$imagen" :alt="$titulo" class="aspect-[4/3] w-full" />
@@ -93,7 +93,7 @@
     {{-- Nuestro manifiesto --}}
     <section class="relative overflow-hidden bg-helena-rosa-claro">
         <div class="grid items-center md:grid-cols-[0.8fr_1.2fr]">
-            <x-foto src="storage/recursos/autocuidado-flor.png" alt="Flor rosada" class="h-64 w-full md:h-[26rem]" />
+            <x-foto src="storage/Cuidado_capilar/flor_rosada_manifiesto.png" alt="Flor rosada" class="h-64 w-full md:h-[26rem]" />
             <div class="px-6 sm:px-12 py-16 text-center">
                 <p class="flex items-center justify-center gap-3 text-xs font-medium uppercase tracking-[0.35em] text-helena-rosa-oscuro">
                     <span class="h-px w-8 bg-helena-rosa-oscuro/60"></span>Nuestro manifiesto<span class="h-px w-8 bg-helena-rosa-oscuro/60"></span>
