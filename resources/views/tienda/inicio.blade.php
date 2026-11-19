@@ -18,7 +18,11 @@
                 <x-tienda.boton-flecha :href="route('cuidado-capilar')" class="mt-8">{{ contenido('inicio.hero.boton') }}</x-tienda.boton-flecha>
             </div>
             <div class="flex justify-center md:justify-end">
-                <x-foto :src="contenido('inicio.hero.imagen')" alt="Productos de cuidado capilar Helena" class="aspect-[4/3] w-full max-w-xl rounded-sm object-contain" />
+                @if ($carrusel->isEmpty())
+                    <x-foto :src="contenido('inicio.hero.imagen')" alt="Productos de cuidado capilar Helena" class="aspect-[4/3] w-full max-w-xl rounded-sm object-contain" />
+                @else
+                    @include('partials.carrusel', ['imagenes' => $carrusel])
+                @endif
             </div>
         </div>
     </section>

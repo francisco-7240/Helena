@@ -29,7 +29,7 @@
         <div>
             <x-input-label for="imagen" value="Imagen" />
             @if ($categoria->imagen)
-                <img src="{{ Storage::disk('public')->url($categoria->imagen) }}" alt="" class="mt-2 h-24 w-24 rounded object-cover">
+                <img src="{{ asset('storage/'.$categoria->imagen) }}" alt="" class="mt-2 h-24 w-24 rounded object-cover">
             @endif
             <input id="imagen" type="file" name="imagen" accept="image/*" class="mt-2 block text-sm">
         </div>

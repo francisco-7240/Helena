@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Facades\Storage;
 
 class Producto extends Model
 {
@@ -105,6 +104,6 @@ class Producto extends Model
     {
         $imagen = $this->imagenes->firstWhere('es_portada', true) ?? $this->imagenes->first();
 
-        return $imagen ? Storage::disk('public')->url($imagen->imagen) : null;
+        return $imagen ? asset('storage/'.$imagen->imagen) : null;
     }
 }

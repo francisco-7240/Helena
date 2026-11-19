@@ -66,7 +66,7 @@
                     <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
                         @foreach ($producto->imagenes as $imagen)
                             <div class="rounded-lg border border-stone-200 p-2 text-xs">
-                                <img src="{{ Storage::disk('public')->url($imagen->imagen) }}" alt="" class="aspect-square w-full rounded object-cover">
+                                <img src="{{ asset('storage/'.$imagen->imagen) }}" alt="" class="aspect-square w-full rounded object-cover">
                                 <label class="mt-2 flex items-center gap-1">
                                     <input type="radio" name="portada_id" value="{{ $imagen->id }}" @checked($imagen->es_portada)> Portada
                                 </label>

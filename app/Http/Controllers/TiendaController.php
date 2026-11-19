@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CarruselImagen;
 use App\Models\Categoria;
 use App\Models\Color;
 use App\Models\Marca;
@@ -20,7 +21,9 @@ class TiendaController extends Controller
             ->take(4)
             ->get();
 
-        return view('tienda.inicio', compact('productos'));
+        $carrusel = CarruselImagen::visibles()->get();
+
+        return view('tienda.inicio', compact('productos', 'carrusel'));
     }
 
     /**

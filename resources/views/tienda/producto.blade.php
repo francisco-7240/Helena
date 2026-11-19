@@ -1,5 +1,5 @@
 @php
-    $imagenes = $producto->imagenes->map(fn ($img) => Storage::disk('public')->url($img->imagen))->values();
+    $imagenes = $producto->imagenes->map(fn ($img) => asset('storage/'.$img->imagen))->values();
     $portada = $producto->portadaUrl();
     $variantes = $producto->productoColores->sortByDesc('es_predeterminado')->values();
     $varianteInicial = $variantes->firstWhere('stock', '>', 0) ?? $variantes->first();

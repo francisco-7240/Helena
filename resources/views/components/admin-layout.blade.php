@@ -21,6 +21,7 @@
                 ['admin.colores.index', 'admin.colores.*', 'Colores'],
                 ['admin.contactos.index', 'admin.contactos.*', 'Mensajes'],
                 ['admin.paginas.index', 'admin.paginas.*', 'Contenido del sitio'],
+                ['admin.carrusel.index', 'admin.carrusel.*', 'Carrusel de inicio'],
                 ['admin.usuarios.index', 'admin.usuarios.*', 'Usuarios'],
             ];
         @endphp

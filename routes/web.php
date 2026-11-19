@@ -57,6 +57,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::resource('pedidos', Admin\PedidoController::class)->only(['index', 'show', 'update'])->parameters(['pedidos' => 'pedido']);
     Route::resource('contactos', Admin\ContactoController::class)->only(['index', 'update', 'destroy'])->parameters(['contactos' => 'contacto']);
 
+    Route::resource('carrusel', Admin\CarruselController::class)->only(['index', 'store', 'update', 'destroy'])->parameters(['carrusel' => 'imagen']);
+
     Route::get('paginas', [Admin\PaginaController::class, 'index'])->name('paginas.index');
     Route::get('paginas/{pagina}', [Admin\PaginaController::class, 'edit'])->name('paginas.edit');
     Route::put('paginas/{pagina}', [Admin\PaginaController::class, 'update'])->name('paginas.update');
