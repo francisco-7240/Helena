@@ -98,10 +98,9 @@
                             <h3 class="mt-4 font-serif text-xl leading-tight">
                                 <a href="{{ route('tienda.producto', $producto) }}" class="hover:text-helena-verde">{{ $producto->nombre }}</a>
                             </h3>
-                            @if ($producto->descripcion)
-                                <p class="mt-1 text-sm sm:text-base leading-relaxed text-helena-oscuro/60">{{ Str::limit($producto->descripcion, 60) }}</p>
-                            @endif
-                            <p class="mt-1 text-xs font-medium">@precio($producto->precioFinal())</p>
+                            {{-- Descripción siempre de dos líneas, para que precio y botón queden alineados --}}
+                            <p class="mt-1 line-clamp-2 min-h-[2lh] text-sm leading-relaxed text-helena-oscuro/60" title="{{ $producto->descripcion }}">{{ $producto->descripcion }}</p>
+                            <p class="mt-auto pt-2 text-sm font-medium">@precio($producto->precioFinal())</p>
                             <div class="mt-3">
                                 @if ($variante)
                                     <form method="POST" action="{{ route('carrito.agregar') }}">

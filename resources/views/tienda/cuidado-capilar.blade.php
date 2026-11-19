@@ -61,15 +61,13 @@
             @else
                 <div class="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
                     @foreach ($productos as $producto)
-                        <a href="{{ route('tienda.producto', $producto) }}" class="group block">
+                        <a href="{{ route('tienda.producto', $producto) }}" class="group flex flex-col">
                             <div class="overflow-hidden">
                                 <x-tienda.imagen :producto="$producto" class="aspect-[4/5] w-full transition duration-500 group-hover:scale-105" />
                             </div>
                             <h3 class="mt-4 font-serif text-2xl leading-tight group-hover:text-helena-verde">{{ $producto->nombre }}</h3>
-                            @if ($producto->descripcion)
-                                <p class="mx-auto mt-2 max-w-[15rem] text-sm sm:text-base leading-relaxed text-helena-oscuro/80">{{ Str::limit($producto->descripcion, 120) }}</p>
-                            @endif
-                            <p class="mt-2 text-sm font-medium">@precio($producto->precioFinal())</p>
+                            <p class="mx-auto mt-2 line-clamp-3 min-h-[3lh] max-w-[15rem] text-sm sm:text-base leading-relaxed text-helena-oscuro/80" title="{{ $producto->descripcion }}">{{ $producto->descripcion }}</p>
+                            <p class="mt-auto pt-2 text-sm font-medium">@precio($producto->precioFinal())</p>
                         </a>
                     @endforeach
                 </div>
