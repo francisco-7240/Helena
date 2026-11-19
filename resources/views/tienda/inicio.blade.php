@@ -4,28 +4,29 @@
         @include('partials.iconos-redes', ['clase' => 'h-4 w-4'])
     </div>
 
-    {{-- Hero --}}
-    <section class="relative overflow-hidden bg-helena-arena">
-        @include('partials.hojas', ['clase' => 'pointer-events-none absolute -left-10 -bottom-10 h-[34rem] w-[34rem] opacity-40'])
-        @include('partials.hojas', ['clase' => 'pointer-events-none absolute left-1/3 -top-24 h-[26rem] w-[26rem] rotate-180 opacity-30'])
+    @if ($carrusel->isNotEmpty())
+        {{-- Banners a pantalla completa (Admin → Carrusel de inicio) --}}
+        @include('partials.carrusel', ['imagenes' => $carrusel])
+    @else
+        {{-- Hero --}}
+        <section class="relative overflow-hidden bg-helena-arena">
+            @include('partials.hojas', ['clase' => 'pointer-events-none absolute -left-10 -bottom-10 h-[34rem] w-[34rem] opacity-40'])
+            @include('partials.hojas', ['clase' => 'pointer-events-none absolute left-1/3 -top-24 h-[26rem] w-[26rem] rotate-180 opacity-30'])
 
-        <div class="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-20 lg:py-24 grid items-center gap-10 md:grid-cols-2">
-            <div>
-                <h1 class="font-serif text-6xl sm:text-7xl lg:text-8xl leading-[0.9] text-helena-oscuro">
-                    <x-contenido.titulo clave="inicio.hero" clase-destacado="text-helena-verde" />
-                </h1>
-                <p class="mt-6 text-base sm:text-lg text-helena-oscuro">{{ contenido('inicio.hero.texto') }}</p>
-                <x-tienda.boton-flecha :href="route('cuidado-capilar')" class="mt-8">{{ contenido('inicio.hero.boton') }}</x-tienda.boton-flecha>
-            </div>
-            <div class="flex justify-center md:justify-end">
-                @if ($carrusel->isEmpty())
+            <div class="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-20 lg:py-24 grid items-center gap-10 md:grid-cols-2">
+                <div>
+                    <h1 class="font-serif text-6xl sm:text-7xl lg:text-8xl leading-[0.9] text-helena-oscuro">
+                        <x-contenido.titulo clave="inicio.hero" clase-destacado="text-helena-verde" />
+                    </h1>
+                    <p class="mt-6 text-base sm:text-lg text-helena-oscuro">{{ contenido('inicio.hero.texto') }}</p>
+                    <x-tienda.boton-flecha :href="route('cuidado-capilar')" class="mt-8">{{ contenido('inicio.hero.boton') }}</x-tienda.boton-flecha>
+                </div>
+                <div class="flex justify-center md:justify-end">
                     <x-foto :src="contenido('inicio.hero.imagen')" alt="Productos de cuidado capilar Helena" class="aspect-[4/3] w-full max-w-xl rounded-sm object-contain" />
-                @else
-                    @include('partials.carrusel', ['imagenes' => $carrusel])
-                @endif
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
     {{-- ¿Qué es Helena? --}}
     <section id="nosotros" class="grid md:grid-cols-2 scroll-mt-20">

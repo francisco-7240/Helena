@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Support\ArchivoSubido;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -104,6 +105,6 @@ class Producto extends Model
     {
         $imagen = $this->imagenes->firstWhere('es_portada', true) ?? $this->imagenes->first();
 
-        return $imagen ? asset('storage/'.$imagen->imagen) : null;
+        return $imagen ? ArchivoSubido::url($imagen->imagen) : null;
     }
 }

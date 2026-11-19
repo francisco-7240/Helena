@@ -30,14 +30,30 @@ class CarruselTest extends TestCase
         $this->get(route('inicio'))
             ->assertOk()
             ->assertSeeInOrder(['carrusel/primera.jpg', 'carrusel/segunda.jpg'])
-            ->assertDontSee('carrusel/oculta.jpg');
+            ->assertDontSee('carrusel/oculta.jpg')
+            ->assertDontSee(contenido('inicio.hero.texto'));
+    }
+
+    public function test_un_banner_con_enlace_y_version_para_celular_se_muestra_completo(): void
+    {
+        CarruselImagen::factory()->create([
+            'imagen' => 'carrusel/horizontal.jpg',
+            'imagen_movil' => 'carrusel/Banner vertical.jpg',
+            'enlace' => '/tienda',
+        ]);
+
+        $this->get(route('inicio'))
+            ->assertOk()
+            ->assertSee('href="/tienda"', false)
+            ->assertSee('media="(max-width: 767px)" srcset="'.asset('storage/carrusel/Banner%20vertical.jpg').'"', false);
     }
 
     public function test_sin_imagenes_la_portada_usa_la_imagen_de_contenido(): void
     {
         $this->get(route('inicio'))
             ->assertOk()
-            ->assertDontSee('aria-roledescription="carrusel"', false);
+            ->assertDontSee('aria-roledescription="carrusel"', false)
+            ->assertSee(contenido('inicio.hero.texto'));
     }
 
     public function test_el_admin_agrega_varias_imagenes_con_su_nombre_original(): void
@@ -77,6 +93,45 @@ class CarruselTest extends TestCase
         $this->assertSame(5, $imagen->orden);
         $this->assertFalse($imagen->activo);
         $this->assertSame('Línea capilar Helena', $imagen->descripcion);
+    }
+
+    public function test_el_admin_sube_y_quita_la_version_para_celular(): void
+    {
+        Storage::fake('public');
+        $imagen = CarruselImagen::factory()->create(['orden' => 1]);
+        $admin = $this->admin();
+
+        $this->actingAs($admin)->patch(route('admin.carrusel.update', $imagen), [
+            'orden' => 1,
+            'activo' => '1',
+            'imagen_movil' => UploadedFile::fake()->image('Banner celular.jpg', 1080, 1920),
+        ])->assertSessionHasNoErrors();
+
+        $this->assertSame('carrusel/Banner celular.jpg', $imagen->fresh()->imagen_movil);
+        Storage::disk('public')->assertExists('carrusel/Banner celular.jpg');
+
+        $this->actingAs($admin)->patch(route('admin.carrusel.update', $imagen), [
+            'orden' => 1,
+            'activo' => '1',
+            'quitar_movil' => '1',
+        ]);
+
+        $this->assertNull($imagen->fresh()->imagen_movil);
+        Storage::disk('public')->assertMissing('carrusel/Banner celular.jpg');
+    }
+
+    public function test_el_enlace_debe_ser_una_ruta_o_una_direccion_web(): void
+    {
+        $imagen = CarruselImagen::factory()->create();
+        $admin = $this->admin();
+
+        $this->actingAs($admin)->patch(route('admin.carrusel.update', $imagen), ['orden' => 1, 'enlace' => 'javascript:alert(1)'])
+            ->assertSessionHasErrors('enlace');
+
+        $this->actingAs($admin)->patch(route('admin.carrusel.update', $imagen), ['orden' => 1, 'enlace' => 'https://helena.test/promo'])
+            ->assertSessionHasNoErrors();
+
+        $this->assertSame('https://helena.test/promo', $imagen->fresh()->enlace);
     }
 
     public function test_el_admin_elimina_una_imagen_y_su_archivo(): void

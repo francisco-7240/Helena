@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Support\ArchivoSubido;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Imagen del carrusel de la portada. "imagen" es la ruta dentro del disco "public".
+ * Banner del carrusel de la portada. "imagen" e "imagen_movil" son rutas dentro del disco "public".
  */
 class CarruselImagen extends Model
 {
@@ -17,7 +18,9 @@ class CarruselImagen extends Model
 
     protected $fillable = [
         'imagen',
+        'imagen_movil',
         'descripcion',
+        'enlace',
         'orden',
         'activo',
     ];
@@ -40,6 +43,14 @@ class CarruselImagen extends Model
      */
     public function url(): string
     {
-        return asset('storage/'.$this->imagen);
+        return ArchivoSubido::url($this->imagen);
+    }
+
+    /**
+     * URL de la versión para celular, o la imagen principal si no tiene.
+     */
+    public function urlMovil(): string
+    {
+        return $this->imagen_movil ? ArchivoSubido::url($this->imagen_movil) : $this->url();
     }
 }

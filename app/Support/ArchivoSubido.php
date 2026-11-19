@@ -28,6 +28,15 @@ class ArchivoSubido
     }
 
     /**
+     * URL pública de un archivo del disco "public", con cada parte de la ruta codificada
+     * (los espacios y tildes de los nombres originales no rompen src ni srcset).
+     */
+    public static function url(string $ruta): string
+    {
+        return asset('storage/'.implode('/', array_map('rawurlencode', explode('/', $ruta))));
+    }
+
+    /**
      * Quita del nombre los caracteres que no son válidos en un archivo o en una URL
      * (barras, comodines, caracteres de control...), conservando letras con tilde y espacios.
      */

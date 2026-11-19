@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 /**
- * Imágenes del carrusel de la portada.
+ * Banners del carrusel de la portada.
  */
 class CarruselController extends Controller
 {
@@ -51,18 +51,40 @@ class CarruselController extends Controller
     {
         $datos = $request->validate([
             'descripcion' => ['nullable', 'string', 'max:255'],
+            'enlace' => ['nullable', 'string', 'max:255', 'regex:/^(https?:\/\/|\/)/'],
             'orden' => ['required', 'integer', 'min:0', 'max:9999'],
             'activo' => ['boolean'],
+            'imagen_movil' => ['nullable', 'image', 'max:5120'],
+            'quitar_movil' => ['boolean'],
+        ], [
+            'enlace.regex' => 'El enlace debe empezar por https:// o por / (por ejemplo /tienda).',
         ]);
 
-        $imagen->update([...$datos, 'activo' => $request->boolean('activo')]);
+        $cambios = [
+            'descripcion' => $datos['descripcion'] ?? null,
+            'enlace' => $datos['enlace'] ?? null,
+            'orden' => $datos['orden'],
+            'activo' => $request->boolean('activo'),
+        ];
+
+        if ($request->hasFile('imagen_movil') || $request->boolean('quitar_movil')) {
+            if ($imagen->imagen_movil) {
+                Storage::disk('public')->delete($imagen->imagen_movil);
+            }
+
+            $cambios['imagen_movil'] = $request->hasFile('imagen_movil')
+                ? ArchivoSubido::guardarConNombreOriginal($request->file('imagen_movil'), 'carrusel')
+                : null;
+        }
+
+        $imagen->update($cambios);
 
         return redirect()->route('admin.carrusel.index')->with('status', 'Imagen actualizada.');
     }
 
     public function destroy(CarruselImagen $imagen): RedirectResponse
     {
-        Storage::disk('public')->delete($imagen->imagen);
+        Storage::disk('public')->delete(array_filter([$imagen->imagen, $imagen->imagen_movil]));
         $imagen->delete();
 
         return redirect()->route('admin.carrusel.index')->with('status', 'Imagen eliminada del carrusel.');
