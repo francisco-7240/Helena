@@ -49,10 +49,8 @@ class AdminTest extends TestCase
             route('admin.productos.edit', $producto),
             route('admin.categorias.index'),
             route('admin.marcas.index'),
-            route('admin.colores.index'),
             route('admin.pedidos.index'),
             route('admin.pedidos.show', $pedido),
-            route('admin.contactos.index'),
         ] as $url) {
             $this->actingAs($admin)->get($url)->assertOk();
         }

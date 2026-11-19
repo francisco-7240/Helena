@@ -4,7 +4,7 @@
             ['Ventas confirmadas', \App\Support\Precio::formato($ventasTotales), route('admin.pedidos.index')],
             ['Pedidos pendientes', $pedidosPendientes, route('admin.pedidos.index', ['estado' => 'pendiente'])],
             ['Productos activos', $productosActivos, route('admin.productos.index')],
-            ['Mensajes sin responder', $mensajesPendientes, route('admin.contactos.index')],
+            ['Clientes registrados', $clientesRegistrados, route('admin.usuarios.index')],
         ] as [$etiqueta, $valor, $enlace])
             <a href="{{ $enlace }}" class="rounded-xl bg-white p-5 shadow-sm hover:ring-1 hover:ring-stone-300">
                 <p class="text-sm text-stone-500">{{ $etiqueta }}</p>

@@ -18,8 +18,6 @@
                 ['admin.productos.index', 'admin.productos.*', 'Productos'],
                 ['admin.categorias.index', 'admin.categorias.*', 'Categorías'],
                 ['admin.marcas.index', 'admin.marcas.*', 'Marcas'],
-                ['admin.colores.index', 'admin.colores.*', 'Colores'],
-                ['admin.contactos.index', 'admin.contactos.*', 'Mensajes'],
                 ['admin.paginas.index', 'admin.paginas.*', 'Contenido del sitio'],
                 ['admin.carrusel.index', 'admin.carrusel.*', 'Banners de inicio'],
                 ['admin.usuarios.index', 'admin.usuarios.*', 'Usuarios'],

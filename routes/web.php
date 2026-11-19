@@ -52,10 +52,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/', Admin\DashboardController::class)->name('dashboard');
     Route::resource('categorias', Admin\CategoriaController::class)->except('show')->parameters(['categorias' => 'categoria']);
     Route::resource('marcas', Admin\MarcaController::class)->except('show')->parameters(['marcas' => 'marca']);
-    Route::resource('colores', Admin\ColorController::class)->except('show')->parameters(['colores' => 'color']);
     Route::resource('productos', Admin\ProductoController::class)->except('show')->parameters(['productos' => 'producto']);
     Route::resource('pedidos', Admin\PedidoController::class)->only(['index', 'show', 'update'])->parameters(['pedidos' => 'pedido']);
-    Route::resource('contactos', Admin\ContactoController::class)->only(['index', 'update', 'destroy'])->parameters(['contactos' => 'contacto']);
 
     Route::resource('carrusel', Admin\CarruselController::class)->only(['index', 'store', 'update', 'destroy'])->parameters(['carrusel' => 'imagen']);
 
