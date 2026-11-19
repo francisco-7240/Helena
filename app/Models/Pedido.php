@@ -22,7 +22,6 @@ class Pedido extends Model
 
     public const METODOS_PAGO = [
         'transferencia' => 'Transferencia bancaria',
-        'contra_entrega' => 'Pago contra entrega',
     ];
 
     protected $table = 'pedidos';
